@@ -51,6 +51,13 @@ export const Navbar = () => {
               Reviews
             </button>
             <Button
+              variant="ghost"
+              onClick={() => window.location.href = "/auth"}
+              className="text-foreground hover:text-primary"
+            >
+              Sign In
+            </Button>
+            <Button
               onClick={() => scrollToSection("contact")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
             >
@@ -97,6 +104,16 @@ export const Navbar = () => {
               >
                 Reviews
               </button>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  window.location.href = "/auth";
+                  setIsOpen(false);
+                }}
+                className="w-full"
+              >
+                Sign In
+              </Button>
               <Button
                 onClick={() => scrollToSection("contact")}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
