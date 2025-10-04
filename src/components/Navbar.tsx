@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
+  const isActive = (path: string) => location.pathname === path;
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    setIsOpen(false);
   };
 
   return (
@@ -18,7 +20,7 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 cursor-pointer" onClick={() => navigate("/")}>
             <h1 className="text-2xl lg:text-3xl font-bold bg-gradient-hero bg-clip-text text-transparent">
               Jollof Creative
             </h1>
@@ -27,38 +29,46 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <button
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              onClick={() => handleNavigation("/about")}
+              className={`transition-colors font-medium ${
+                isActive("/about") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
             >
               About
             </button>
             <button
-              onClick={() => scrollToSection("services")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              onClick={() => handleNavigation("/services")}
+              className={`transition-colors font-medium ${
+                isActive("/services") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
             >
               Services
             </button>
             <button
-              onClick={() => scrollToSection("portfolio")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              onClick={() => handleNavigation("/portfolio")}
+              className={`transition-colors font-medium ${
+                isActive("/portfolio") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
             >
               Portfolio
             </button>
             <button
-              onClick={() => scrollToSection("reviews")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
+              onClick={() => handleNavigation("/reviews")}
+              className={`transition-colors font-medium ${
+                isActive("/reviews") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
             >
               Reviews
             </button>
             <Button
               variant="ghost"
-              onClick={() => window.location.href = "/auth"}
+              onClick={() => handleNavigation("/auth")}
               className="text-foreground hover:text-primary"
             >
               Sign In
             </Button>
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => handleNavigation("/contact")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
             >
               Get Started
@@ -81,41 +91,46 @@ export const Navbar = () => {
           <div className="md:hidden pb-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
               <button
-                onClick={() => scrollToSection("about")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
+                onClick={() => handleNavigation("/about")}
+                className={`transition-colors font-medium text-left ${
+                  isActive("/about") ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
               >
                 About
               </button>
               <button
-                onClick={() => scrollToSection("services")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
+                onClick={() => handleNavigation("/services")}
+                className={`transition-colors font-medium text-left ${
+                  isActive("/services") ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
               >
                 Services
               </button>
               <button
-                onClick={() => scrollToSection("portfolio")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
+                onClick={() => handleNavigation("/portfolio")}
+                className={`transition-colors font-medium text-left ${
+                  isActive("/portfolio") ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
               >
                 Portfolio
               </button>
               <button
-                onClick={() => scrollToSection("reviews")}
-                className="text-foreground hover:text-primary transition-colors font-medium text-left"
+                onClick={() => handleNavigation("/reviews")}
+                className={`transition-colors font-medium text-left ${
+                  isActive("/reviews") ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
               >
                 Reviews
               </button>
               <Button
                 variant="outline"
-                onClick={() => {
-                  window.location.href = "/auth";
-                  setIsOpen(false);
-                }}
+                onClick={() => handleNavigation("/auth")}
                 className="w-full"
               >
                 Sign In
               </Button>
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => handleNavigation("/contact")}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
               >
                 Get Started
