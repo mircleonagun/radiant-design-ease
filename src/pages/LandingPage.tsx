@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Hero3D } from "@/components/3D/Scene3D";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -42,8 +43,9 @@ const LandingPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-20 px-4">
-        <div className="container mx-auto max-w-6xl">
+      <section className="relative pt-24 pb-20 px-4 overflow-hidden">
+        <Hero3D />
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-left max-w-2xl animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               Increase Your Customers Loyalty and Satisfaction
