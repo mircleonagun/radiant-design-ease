@@ -8,47 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* Beige/Warm Background - matching design */
+    --background: 33 44% 85%;
     --foreground: 20 14% 10%;
 
-    --card: 0 0% 100%;
+    --card: 33 44% 90%;
     --card-foreground: 20 14% 10%;
 
-    --popover: 0 0% 100%;
+    --popover: 33 44% 90%;
     --popover-foreground: 20 14% 10%;
 
-    /* Jollof Creative Brand Colors - Vibrant Orange/Red */
-    --primary: 14 88% 55%;
+    /* Orange accent color - matching design */
+    --primary: 24 95% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 14 88% 65%;
+    --primary-glow: 24 95% 63%;
 
     --secondary: 20 14% 10%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 20 20% 96%;
-    --muted-foreground: 20 10% 45%;
+    --muted: 33 30% 75%;
+    --muted-foreground: 20 20% 35%;
 
-    --accent: 35 100% 50%;
-    --accent-foreground: 20 14% 10%;
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 20 15% 90%;
-    --input: 20 15% 90%;
-    --ring: 14 88% 55%;
+    --border: 33 25% 75%;
+    --input: 0 0% 100%;
+    --ring: 24 95% 53%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(14 88% 55%) 0%, hsl(35 100% 50%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(20 20% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(33 95% 58%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(33 30% 95%) 100%);
     
     /* Shadows */
-    --shadow-sm: 0 2px 8px hsl(14 88% 55% / 0.1);
-    --shadow-md: 0 4px 16px hsl(14 88% 55% / 0.15);
-    --shadow-lg: 0 8px 32px hsl(14 88% 55% / 0.2);
-    --shadow-glow: 0 0 40px hsl(14 88% 65% / 0.3);
+    --shadow-sm: 0 2px 8px hsl(24 95% 53% / 0.1);
+    --shadow-md: 0 4px 16px hsl(24 95% 53% / 0.15);
+    --shadow-lg: 0 8px 32px hsl(24 95% 53% / 0.2);
+    --shadow-glow: 0 0 40px hsl(24 95% 63% / 0.3);
   }
 
   .dark {

@@ -1,188 +1,216 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Video, Image as ImageIcon } from "lucide-react";
+import { ArrowRight, TrendingUp, Users, DollarSign, Calendar, CheckCircle2, Palette, FileVideo } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Hero3D } from "@/components/3D/Scene3D";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 const LandingPage = () => {
   const navigate = useNavigate();
 
+  const partnerLogos = [
+    { name: "Google", icon: "🔍" },
+    { name: "Trello", icon: "📋" },
+    { name: "Monday", icon: "📊" },
+    { name: "Notion", icon: "📝" },
+    { name: "Slack", icon: "💬" },
+  ];
+
+  const stats = [
+    { icon: FileVideo, value: "100 +", label: "Completed Project" },
+    { icon: Users, value: "20 %", label: "Customer Satisfaction" },
+    { icon: DollarSign, value: "$10M", label: "Raised by Clients" },
+    { icon: Calendar, value: "2 yrs", label: "Years in Business" },
+  ];
+
+  const portfolioItems = [
+    { title: "Digital Marketing Agency Website", description: "This is a great project built by a very talented person..." },
+    { title: "Digital Marketing Agency Website", description: "This is a great project built by a very talented person..." },
+    { title: "Digital Marketing Agency Website", description: "This is a great project built by a very talented person..." },
+    { title: "Digital Marketing Agency Website", description: "This is a great project built by a very talented person..." },
+  ];
+
+  const testimonials = [
+    { name: "Emily Stones", role: "CEO, Marketing Corp", text: "Thank You for your service. I am very pleased with the result. It's really awesome & modern design." },
+    { name: "Emily Stones", role: "CEO, Marketing Corp", text: "Thank You for your service. I am very pleased with the result. It's really awesome & modern design." },
+    { name: "Emily Stones", role: "CEO, Marketing Corp", text: "Thank You for your service. I am very pleased with the result. It's really awesome & modern design." },
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero Section with 3D Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <Hero3D />
-        
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/85 to-primary/40 z-10" />
-        
-        {/* Content */}
-        <div className="container mx-auto px-4 lg:px-8 relative z-20 py-32 lg:py-40">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="animate-fade-in-up">
-              <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold text-primary-foreground mb-6 leading-tight">
-                Transform Your Vision Into{" "}
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Creative Reality
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 leading-relaxed max-w-2xl mx-auto">
-                Professional video editing, stunning graphics, and captivating special effects 
-                that elevate your brand.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-scale-in mb-16">
-              <Button
-                size="lg"
-                onClick={() => navigate("/services")}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-7 shadow-glow group"
-              >
-                Explore Services
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => navigate("/portfolio")}
-                className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 text-lg px-10 py-7 backdrop-blur-sm"
-              >
-                <Sparkles className="mr-2" size={20} />
-                View Portfolio
-              </Button>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 animate-fade-in">
-              <div className="bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 rounded-2xl p-8 hover:bg-primary-foreground/20 transition-all duration-300 hover:scale-105">
-                <div className="text-5xl font-bold text-primary mb-2">500+</div>
-                <div className="text-primary-foreground/80">Projects Completed</div>
-              </div>
-              <div className="bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 rounded-2xl p-8 hover:bg-primary-foreground/20 transition-all duration-300 hover:scale-105">
-                <div className="text-5xl font-bold text-primary mb-2">150+</div>
-                <div className="text-primary-foreground/80">Happy Clients</div>
-              </div>
-              <div className="bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 rounded-2xl p-8 hover:bg-primary-foreground/20 transition-all duration-300 hover:scale-105">
-                <div className="text-5xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-primary-foreground/80">Support Available</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float z-20">
-          <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-primary-foreground/50 rounded-full" />
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Overview Section */}
-      <section className="py-20 bg-background relative">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              What We <span className="bg-gradient-hero bg-clip-text text-transparent">Create</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From concept to completion, we bring your creative vision to life
+      {/* Hero Section */}
+      <section className="pt-24 pb-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-left max-w-2xl animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Increase Your Customers Loyalty and Satisfaction
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              We help customers feel more loyal and happy customers standout from competitors, make more money
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div
-              onClick={() => navigate("/portfolio")}
-              className="group cursor-pointer bg-gradient-card border border-border rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Video className="text-primary" size={32} />
-              </div>
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                Video Editing
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Short-form and long-form content that captivates audiences
-              </p>
-            </div>
-
-            <div
-              onClick={() => navigate("/portfolio")}
-              className="group cursor-pointer bg-gradient-card border border-border rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
-              style={{ animationDelay: "0.1s" }}
-            >
-              <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <ImageIcon className="text-accent" size={32} />
-              </div>
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
-                Graphic Design
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Eye-catching visuals that make your brand unforgettable
-              </p>
-            </div>
-
-            <div
-              onClick={() => navigate("/portfolio")}
-              className="group cursor-pointer bg-gradient-card border border-border rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Sparkles className="text-primary" size={32} />
-              </div>
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                Special Effects
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Stunning animations and motion graphics that wow
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-16">
             <Button
               size="lg"
-              onClick={() => navigate("/services")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
+              onClick={() => navigate("/contact")}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-lg shadow-lg"
             >
-              View All Services
-              <ArrowRight className="ml-2" size={20} />
+              Get Started
             </Button>
+          </div>
+
+          {/* Partner Logos */}
+          <div className="mt-16 flex flex-wrap justify-center md:justify-start gap-8 items-center opacity-60">
+            {partnerLogos.map((partner) => (
+              <div key={partner.name} className="flex items-center gap-2 text-2xl">
+                <span>{partner.icon}</span>
+                <span className="text-foreground font-semibold">{partner.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero relative overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 animate-fade-in-up">
-              Ready to Start Your Project?
-            </h2>
-            <p className="text-xl text-primary-foreground/90 mb-8 animate-fade-in">
-              Let's create something amazing together
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-              <Button
-                size="lg"
-                onClick={() => navigate("/contact")}
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-8"
-              >
-                Get in Touch
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => navigate("/about")}
-                className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 backdrop-blur-sm px-8"
-              >
-                Learn More About Us
-              </Button>
-            </div>
+      {/* What We Do Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-4 text-sm text-primary font-semibold uppercase tracking-wider">
+            WHAT WE DO
+          </div>
+          <h2 className="text-4xl font-bold text-center mb-4">
+            We provide the Perfect Solution to your business growth
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <Card className="p-8 bg-card hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <TrendingUp className="text-primary w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Grow Your Business</h3>
+              <p className="text-muted-foreground mb-4">
+                We help identify the best ways to improve your business
+              </p>
+              <button className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                Learn More <ArrowRight size={16} />
+              </button>
+            </Card>
+
+            <Card className="p-8 bg-card hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <Palette className="text-primary w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Improve brand loyalty</h3>
+              <p className="text-muted-foreground mb-4">
+                We help identify the best ways to improve your business
+              </p>
+              <button className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                Learn More <ArrowRight size={16} />
+              </button>
+            </Card>
+
+            <Card className="p-8 bg-card hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <CheckCircle2 className="text-primary w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Improve Business Model</h3>
+              <p className="text-muted-foreground mb-4">
+                We help identify the best ways to improve your business
+              </p>
+              <button className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                Learn More <ArrowRight size={16} />
+              </button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <stat.icon className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
+                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-4 text-sm text-primary font-semibold uppercase tracking-wider">
+            OUR PORTFOLIO
+          </div>
+          <h2 className="text-4xl font-bold text-center mb-16">
+            We provide the Perfect Solution to your business growth
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {portfolioItems.map((item, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group">
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20" />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-4 text-sm text-primary font-semibold uppercase tracking-wider">
+            TESTIMONIALS
+          </div>
+          <h2 className="text-4xl font-bold text-center mb-16">
+            See What Our Customer Say About Us
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="p-8 bg-card">
+                <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/20" />
+                  <div>
+                    <div className="font-bold">{testimonial.name}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-2xl text-center">
+          <h2 className="text-4xl font-bold mb-4">
+            Subscribe To Get The Latest News About Us
+          </h2>
+          <p className="text-muted-foreground mb-8">
+            Please drop your email below to get daily update about what we do
+          </p>
+          <div className="flex gap-4 max-w-md mx-auto">
+            <Input 
+              type="email" 
+              placeholder="Enter Your Email" 
+              className="flex-1 bg-input border-border rounded-full px-6"
+            />
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8">
+              Subscribe
+            </Button>
           </div>
         </div>
       </section>
