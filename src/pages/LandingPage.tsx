@@ -48,7 +48,10 @@ const LandingPage = () => {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-left max-w-2xl animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Increase Your Customers Loyalty and Satisfaction
+              Increase Your Customers{" "}
+              <span className="bg-gradient-to-r from-primary to-orange-600 bg-clip-text text-transparent">
+                Loyalty and Satisfaction
+              </span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We help customers feel more loyal and happy customers standout from competitors, make more money
@@ -56,7 +59,7 @@ const LandingPage = () => {
             <Button
               size="lg"
               onClick={() => navigate("/contact")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-lg shadow-lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
               Get Started
             </Button>
@@ -64,8 +67,12 @@ const LandingPage = () => {
 
           {/* Partner Logos */}
           <div className="mt-16 flex flex-wrap justify-center md:justify-start gap-8 items-center opacity-60">
-            {partnerLogos.map((partner) => (
-              <div key={partner.name} className="flex items-center gap-2 text-2xl">
+            {partnerLogos.map((partner, index) => (
+              <div 
+                key={partner.name} 
+                className="flex items-center gap-2 text-2xl hover:opacity-100 transition-opacity animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <span>{partner.icon}</span>
                 <span className="text-foreground font-semibold">{partner.name}</span>
               </div>
@@ -85,8 +92,8 @@ const LandingPage = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <Card className="p-8 bg-card hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <Card className="p-8 bg-card hover:shadow-xl transition-all hover:-translate-y-2 animate-fade-in group" style={{ animationDelay: '0.1s' }}>
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                 <TrendingUp className="text-primary w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold mb-3">Grow Your Business</h3>
@@ -98,8 +105,8 @@ const LandingPage = () => {
               </button>
             </Card>
 
-            <Card className="p-8 bg-card hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <Card className="p-8 bg-card hover:shadow-xl transition-all hover:-translate-y-2 animate-fade-in group" style={{ animationDelay: '0.2s' }}>
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                 <Palette className="text-primary w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold mb-3">Improve brand loyalty</h3>
@@ -111,8 +118,8 @@ const LandingPage = () => {
               </button>
             </Card>
 
-            <Card className="p-8 bg-card hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+            <Card className="p-8 bg-card hover:shadow-xl transition-all hover:-translate-y-2 animate-fade-in group" style={{ animationDelay: '0.3s' }}>
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                 <CheckCircle2 className="text-primary w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold mb-3">Improve Business Model</h3>
@@ -154,8 +161,8 @@ const LandingPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {portfolioItems.map((item, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group">
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20" />
+              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all cursor-pointer group hover:-translate-y-2 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-orange-500/20 group-hover:from-primary/30 group-hover:to-orange-500/30 transition-all" />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                     {item.title}
@@ -180,10 +187,10 @@ const LandingPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-8 bg-card">
+              <Card key={index} className="p-8 bg-card hover:shadow-lg transition-all hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${index * 0.15}s` }}>
                 <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20" />
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/30 to-orange-500/30" />
                   <div>
                     <div className="font-bold">{testimonial.name}</div>
                     <div className="text-sm text-muted-foreground">{testimonial.role}</div>
@@ -197,9 +204,12 @@ const LandingPage = () => {
 
       {/* Newsletter Section */}
       <section className="py-20 px-4">
-        <div className="container mx-auto max-w-2xl text-center">
+        <div className="container mx-auto max-w-2xl text-center animate-fade-in">
           <h2 className="text-4xl font-bold mb-4">
-            Subscribe To Get The Latest News About Us
+            Subscribe To Get The Latest{" "}
+            <span className="bg-gradient-to-r from-primary to-orange-600 bg-clip-text text-transparent">
+              News About Us
+            </span>
           </h2>
           <p className="text-muted-foreground mb-8">
             Please drop your email below to get daily update about what we do
@@ -208,9 +218,9 @@ const LandingPage = () => {
             <Input 
               type="email" 
               placeholder="Enter Your Email" 
-              className="flex-1 bg-input border-border rounded-full px-6"
+              className="flex-1 bg-input border-border rounded-full px-6 focus:ring-2 focus:ring-primary transition-all"
             />
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 hover:scale-105 transition-all shadow-lg">
               Subscribe
             </Button>
           </div>
