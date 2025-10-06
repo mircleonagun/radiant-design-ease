@@ -9,12 +9,12 @@ export const Hero3D = () => {
       <Canvas camera={{ position: [0, 0, 5] }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
-        <pointLight position={[-10, -10, -5]} intensity={0.5} color="#ff6b35" />
+        <pointLight position={[-10, -10, -5]} intensity={0.5} color="#3b82f6" />
         
         <Float speed={2} rotationIntensity={1} floatIntensity={2}>
           <Sphere args={[1, 100, 200]} scale={2.5}>
             <MeshDistortMaterial
-              color="#ff6b35"
+              color="#3b82f6"
               attach="material"
               distort={0.5}
               speed={2}
@@ -27,7 +27,7 @@ export const Hero3D = () => {
         <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
           <Sphere args={[0.5, 100, 200]} scale={1} position={[3, 1, -2]}>
             <MeshDistortMaterial
-              color="#ffa500"
+              color="#60a5fa"
               attach="material"
               distort={0.3}
               speed={1.5}
@@ -52,13 +52,13 @@ export const FloatingShapes = () => {
         
         <Float speed={1.5} rotationIntensity={1} floatIntensity={1.5}>
           <Sphere args={[0.8, 64, 64]} position={[-2, 1, 0]}>
-            <meshStandardMaterial color="#ff6b35" wireframe />
+            <meshStandardMaterial color="#3b82f6" wireframe />
           </Sphere>
         </Float>
         
         <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
           <Sphere args={[0.6, 64, 64]} position={[2, -1, 0]}>
-            <meshStandardMaterial color="#ffa500" wireframe />
+            <meshStandardMaterial color="#60a5fa" wireframe />
           </Sphere>
         </Float>
         
