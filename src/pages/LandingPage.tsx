@@ -1,41 +1,85 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Users, DollarSign, Calendar, CheckCircle2, Palette, FileVideo } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Hero3D } from "@/components/3D/Scene3D";
+import { Video, Sparkles, ImageIcon, MessageSquare, Star, ArrowRight, CheckCircle2 } from "lucide-react";
+import videoIcon from "@/assets/video-icon.jpg";
+import graphicsIcon from "@/assets/graphics-icon.jpg";
+import effectsIcon from "@/assets/effects-icon.jpg";
+import socialIcon from "@/assets/social-icon.jpg";
 
 const LandingPage = () => {
   const navigate = useNavigate();
 
-  const partnerLogos = [
-    { name: "Google", icon: "🔍" },
-    { name: "Trello", icon: "📋" },
-    { name: "Monday", icon: "📊" },
-    { name: "Notion", icon: "📝" },
-    { name: "Slack", icon: "💬" },
+  const services = [
+    {
+      icon: videoIcon,
+      title: "Video Editing",
+      description: "Professional video editing for short-form (Reels, Shorts, TikTok) and long-form content (YouTube, IGTV). We bring your vision to life with engaging storytelling.",
+      link: "/services"
+    },
+    {
+      icon: graphicsIcon,
+      title: "Graphic Design",
+      description: "Branded visuals, logos, campaigns, and carousel designs that capture attention and communicate your brand message effectively.",
+      link: "/services"
+    },
+    {
+      icon: effectsIcon,
+      title: "Special Effects",
+      description: "Stunning animations, motion graphics, and creative edits that add that extra wow factor to your content.",
+      link: "/services"
+    },
+    {
+      icon: socialIcon,
+      title: "Social Media Marketing",
+      description: "Strategic social media management and content creation that drives engagement and grows your online presence.",
+      link: "/services"
+    }
   ];
 
   const stats = [
-    { icon: FileVideo, value: "100 +", label: "Completed Project" },
-    { icon: Users, value: "20 %", label: "Customer Satisfaction" },
-    { icon: DollarSign, value: "$10M", label: "Raised by Clients" },
-    { icon: Calendar, value: "2 yrs", label: "Years in Business" },
+    { value: "500+", label: "Projects Completed" },
+    { value: "200+", label: "Happy Clients" },
+    { value: "50K+", label: "Social Media Reach" },
+    { value: "99%", label: "Client Satisfaction" }
   ];
 
   const portfolioItems = [
-    { title: "Digital Marketing Agency Website", description: "This is a great project built by a very talented person..." },
-    { title: "Digital Marketing Agency Website", description: "This is a great project built by a very talented person..." },
-    { title: "Digital Marketing Agency Website", description: "This is a great project built by a very talented person..." },
-    { title: "Digital Marketing Agency Website", description: "This is a great project built by a very talented person..." },
+    { title: "Short-Form Videos", category: "Reels & TikTok", image: videoIcon },
+    { title: "Brand Campaigns", category: "Graphics Design", image: graphicsIcon },
+    { title: "Motion Graphics", category: "Special Effects", image: effectsIcon },
+    { title: "Social Content", category: "Marketing", image: socialIcon }
   ];
 
   const testimonials = [
-    { name: "Emily Stones", role: "CEO, Marketing Corp", text: "Thank You for your service. I am very pleased with the result. It's really awesome & modern design." },
-    { name: "Emily Stones", role: "CEO, Marketing Corp", text: "Thank You for your service. I am very pleased with the result. It's really awesome & modern design." },
-    { name: "Emily Stones", role: "CEO, Marketing Corp", text: "Thank You for your service. I am very pleased with the result. It's really awesome & modern design." },
+    { 
+      name: "Sarah Johnson", 
+      role: "Marketing Director", 
+      quote: "Jollof Creative transformed our social media presence with stunning visuals and engaging content. Highly recommended!",
+      rating: 5
+    },
+    { 
+      name: "Michael Chen", 
+      role: "Business Owner", 
+      quote: "The video editing quality is exceptional. They understand our brand and deliver exactly what we need, every time.",
+      rating: 5
+    },
+    { 
+      name: "Aisha Mohammed", 
+      role: "Content Creator", 
+      quote: "Working with Jollof Creative has been a game-changer. Their creativity and professionalism are unmatched.",
+      rating: 5
+    }
+  ];
+
+  const features = [
+    "Fast turnaround times",
+    "Creative and unique designs",
+    "Unlimited revisions",
+    "24/7 customer support"
   ];
 
   return (
@@ -43,106 +87,161 @@ const LandingPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-20 px-4 overflow-hidden">
-        <Hero3D />
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-left max-w-2xl animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Increase Your Customers{" "}
-              <span className="bg-gradient-to-r from-primary to-orange-600 bg-clip-text text-transparent">
-                Loyalty and Satisfaction
-              </span>
-            </h1>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We help customers feel more loyal and happy customers standout from competitors, make more money
-            </p>
-            <Button
-              size="lg"
-              onClick={() => navigate("/contact")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
-            >
-              Get Started
-            </Button>
-          </div>
-
-          {/* Partner Logos */}
-          <div className="mt-16 flex flex-wrap justify-center md:justify-start gap-8 items-center opacity-60">
-            {partnerLogos.map((partner, index) => (
-              <div 
-                key={partner.name} 
-                className="flex items-center gap-2 text-2xl hover:opacity-100 transition-opacity animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <span>{partner.icon}</span>
-                <span className="text-foreground font-semibold">{partner.name}</span>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-in">
+              <div className="inline-block">
+                <span className="text-primary font-semibold text-lg">Creative Excellence</span>
               </div>
-            ))}
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                <span className="block text-foreground">Crafting</span>
+                <span className="block bg-gradient-hero bg-clip-text text-transparent">Empowering</span>
+                <span className="block text-foreground">Your Brand</span>
+              </h1>
+              <h2 className="text-3xl md:text-4xl font-bold text-muted-foreground">
+                A Creative Solution
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-xl">
+                Transform your brand with professional video editing, stunning graphic design, special effects, and strategic social media marketing. We bring creativity and innovation to every project.
+              </p>
+              <div className="flex gap-4">
+                <Button 
+                  size="lg" 
+                  onClick={() => navigate("/contact")}
+                  className="text-lg px-8"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  onClick={() => navigate("/portfolio")}
+                  className="text-lg px-8"
+                >
+                  View Portfolio
+                </Button>
+              </div>
+            </div>
+            
+            <div className="relative hidden lg:block animate-scale-in">
+              <div className="relative rounded-3xl overflow-hidden shadow-elegant">
+                <img 
+                  src={videoIcon} 
+                  alt="Creative work showcase" 
+                  className="w-full h-[600px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              </div>
+              <div className="absolute -bottom-8 -left-8 bg-primary text-primary-foreground rounded-2xl p-6 shadow-lg">
+                <div className="text-4xl font-bold">5+</div>
+                <div className="text-sm">Years Experience</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What We Do Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-4 text-sm text-primary font-semibold uppercase tracking-wider">
-            WHAT WE DO
+      {/* About Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">About Us</span>
+              <h2 className="text-4xl md:text-5xl font-bold">
+                We create digital experiences that inspire engagement
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                At Jollof Creative, we're passionate about bringing your creative vision to life. Our mission is to empower brands with stunning visuals, compelling videos, and strategic social media content that drives real results.
+              </p>
+              <div className="space-y-4">
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
+                    <span className="text-lg">{feature}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="pt-4">
+                <Button 
+                  size="lg"
+                  onClick={() => navigate("/about")}
+                >
+                  Learn More About Us
+                </Button>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4">
+              <img src={videoIcon} alt="Video editing" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+              <img src={graphicsIcon} alt="Graphic design" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
+              <img src={effectsIcon} alt="Special effects" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+              <img src={socialIcon} alt="Social media" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
+            </div>
           </div>
-          <h2 className="text-4xl font-bold text-center mb-4">
-            We provide the Perfect Solution to your business growth
-          </h2>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Services</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
+              Our Unique And Awesome Services
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From video editing to social media marketing, we offer comprehensive creative solutions
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <Card className="p-8 bg-card hover:shadow-xl transition-all hover:-translate-y-2 animate-fade-in group" style={{ animationDelay: '0.1s' }}>
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <TrendingUp className="text-primary w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Grow Your Business</h3>
-              <p className="text-muted-foreground mb-4">
-                We help identify the best ways to improve your business
-              </p>
-              <button className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                Learn More <ArrowRight size={16} />
-              </button>
-            </Card>
-
-            <Card className="p-8 bg-card hover:shadow-xl transition-all hover:-translate-y-2 animate-fade-in group" style={{ animationDelay: '0.2s' }}>
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <Palette className="text-primary w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Improve brand loyalty</h3>
-              <p className="text-muted-foreground mb-4">
-                We help identify the best ways to improve your business
-              </p>
-              <button className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                Learn More <ArrowRight size={16} />
-              </button>
-            </Card>
-
-            <Card className="p-8 bg-card hover:shadow-xl transition-all hover:-translate-y-2 animate-fade-in group" style={{ animationDelay: '0.3s' }}>
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <CheckCircle2 className="text-primary w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Improve Business Model</h3>
-              <p className="text-muted-foreground mb-4">
-                We help identify the best ways to improve your business
-              </p>
-              <button className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                Learn More <ArrowRight size={16} />
-              </button>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="hover:shadow-elegant transition-all hover:-translate-y-2 duration-300">
+                <CardContent className="p-6">
+                  <div className="mb-4 rounded-xl overflow-hidden">
+                    <img 
+                      src={service.icon} 
+                      alt={service.title}
+                      className="w-full h-48 object-cover hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                  <Button 
+                    variant="link" 
+                    className="p-0 h-auto"
+                    onClick={() => navigate(service.link)}
+                  >
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button 
+              size="lg"
+              onClick={() => navigate("/services")}
+            >
+              View All Services
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-24 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <stat.icon className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
-                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div key={index} className="text-center">
+                <div className="text-5xl md:text-6xl font-bold mb-2">{stat.value}</div>
+                <div className="text-lg opacity-90">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -150,79 +249,159 @@ const LandingPage = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-4 text-sm text-primary font-semibold uppercase tracking-wider">
-            OUR PORTFOLIO
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Portfolio</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
+              Portfolios.
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Explore our latest creative works
+            </p>
           </div>
-          <h2 className="text-4xl font-bold text-center mb-16">
-            We provide the Perfect Solution to your business growth
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {portfolioItems.map((item, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-all cursor-pointer group hover:-translate-y-2 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-orange-500/20 group-hover:from-primary/30 group-hover:to-orange-500/30 transition-all" />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
-                </div>
+              <Card 
+                key={index} 
+                className="overflow-hidden hover:shadow-elegant transition-all hover:-translate-y-2 duration-300 cursor-pointer group" 
+                onClick={() => navigate("/portfolio")}
+              >
+                <CardContent className="p-0 relative">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div>
+                      <p className="text-primary text-sm font-semibold mb-1">{item.category}</p>
+                      <h3 className="text-xl font-bold">{item.title}</h3>
+                    </div>
+                  </div>
+                </CardContent>
               </Card>
             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button 
+              size="lg"
+              onClick={() => navigate("/portfolio")}
+            >
+              View All Projects
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-4 text-sm text-primary font-semibold uppercase tracking-wider">
-            TESTIMONIALS
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">User Reviews</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
+              Don't Believe Me?<br />Check What Clients Think Of Us
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Our happy customers
+            </p>
           </div>
-          <h2 className="text-4xl font-bold text-center mb-16">
-            See What Our Customer Say About Us
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-8 bg-card hover:shadow-lg transition-all hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${index * 0.15}s` }}>
-                <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/30 to-orange-500/30" />
-                  <div>
-                    <div className="font-bold">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+              <Card key={index} className="hover:shadow-elegant transition-all duration-300">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <span className="text-2xl font-bold text-primary">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-lg">{testimonial.name}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    </div>
                   </div>
-                </div>
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">"{testimonial.quote}"</p>
+                </CardContent>
               </Card>
             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button 
+              size="lg"
+              onClick={() => navigate("/reviews")}
+            >
+              View All Reviews
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA Section */}
+      <section className="py-24 bg-gradient-to-br from-primary via-primary/90 to-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_var(--tw-gradient-stops))] from-white/10 to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Looking For An Innovative Idea For Your Business?
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Let's collaborate and bring your creative vision to life. Get in touch with us today!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg"
+                variant="secondary"
+                onClick={() => navigate("/contact")}
+                className="text-lg px-8"
+              >
+                Contact Us Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                onClick={() => navigate("/portfolio")}
+                className="text-lg px-8 bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              >
+                View Our Work
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-2xl text-center animate-fade-in">
-          <h2 className="text-4xl font-bold mb-4">
-            Subscribe To Get The Latest{" "}
-            <span className="bg-gradient-to-r from-primary to-orange-600 bg-clip-text text-transparent">
-              News About Us
-            </span>
-          </h2>
-          <p className="text-muted-foreground mb-8">
-            Please drop your email below to get daily update about what we do
-          </p>
-          <div className="flex gap-4 max-w-md mx-auto">
-            <Input 
-              type="email" 
-              placeholder="Enter Your Email" 
-              className="flex-1 bg-input border-border rounded-full px-6 focus:ring-2 focus:ring-primary transition-all"
-            />
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 hover:scale-105 transition-all shadow-lg">
-              Subscribe
-            </Button>
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Stay Updated With Our Newsletter
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Get the latest creative tips, trend reports, and exclusive offers delivered to your inbox
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <Input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1"
+              />
+              <Button 
+                size="lg"
+              >
+                Subscribe
+              </Button>
+            </div>
           </div>
         </div>
       </section>
