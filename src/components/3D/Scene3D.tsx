@@ -12,7 +12,7 @@ export const Hero3D = () => {
         <pointLight position={[-10, -10, -5]} intensity={0.5} color="#3b82f6" />
         
         <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-          <Sphere args={[1, 100, 200]} scale={2.5}>
+          <Sphere args={[1, 100, 200]} scale={1.5}>
             <MeshDistortMaterial
               color="#3b82f6"
               attach="material"
@@ -25,7 +25,7 @@ export const Hero3D = () => {
         </Float>
         
         <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
-          <Sphere args={[0.5, 100, 200]} scale={1} position={[3, 1, -2]}>
+          <Sphere args={[0.5, 100, 200]} scale={0.6} position={[2.5, 1, -2]}>
             <MeshDistortMaterial
               color="#60a5fa"
               attach="material"
