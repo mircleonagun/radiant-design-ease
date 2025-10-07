@@ -6,6 +6,31 @@ import { Play, ImageIcon, Sparkles } from "lucide-react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 
+// Import portfolio images
+import guidanceJourney from "@/assets/portfolio/guidance_makes_the_journey_short.png";
+import happyJuly from "@/assets/portfolio/happy_new_month_july.png";
+import nigeriaAustralia from "@/assets/portfolio/nigeria_to_australia.png";
+import carvenGaming from "@/assets/portfolio/carven_gaming_arena.png";
+import clanWar from "@/assets/portfolio/clan_war_invite.png";
+import crimsonVibe from "@/assets/portfolio/crimson_vibe_cocktail.png";
+import mangoCooler from "@/assets/portfolio/mango_cooler.png";
+import mentalHealth from "@/assets/portfolio/mental_health_convo.png";
+import strategyMindset from "@/assets/portfolio/strategy_mindset.png";
+import swiftpay from "@/assets/portfolio/swiftpay_business.png";
+
+const graphicsPortfolio = [
+  { title: "ACEFX Academy - Guidance", description: "Educational Brand Campaign", image: guidanceJourney },
+  { title: "Daper - July Campaign", description: "Monthly Celebration Design", image: happyJuly },
+  { title: "African Connect", description: "International Delivery Service", image: nigeriaAustralia },
+  { title: "Carven Gaming Arena", description: "Gaming Event Branding", image: carvenGaming },
+  { title: "Spartan League", description: "Esports Tournament Design", image: clanWar },
+  { title: "Crush Cocktails", description: "Beverage Marketing", image: crimsonVibe },
+  { title: "Wax Cocktail Bar", description: "Menu & Promotion Design", image: mangoCooler },
+  { title: "100 Talents Mental Health", description: "Social Awareness Campaign", image: mentalHealth },
+  { title: "ACEFX Academy - Mindset", description: "Trading Psychology Branding", image: strategyMindset },
+  { title: "Swiftpay Business", description: "Fintech App Marketing", image: swiftpay },
+];
+
 const FloatingShape = () => {
   return (
     <Sphere args={[1, 32, 32]} position={[0, 0, 0]}>
@@ -80,22 +105,22 @@ export const Portfolio = () => {
 
           <TabsContent value="graphics" className="animate-fade-in">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
+              {graphicsPortfolio.map((item, index) => (
                 <Card
-                  key={item}
+                  key={index}
                   className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className="aspect-square bg-gradient-to-br from-accent/20 to-primary/20 relative flex items-center justify-center">
-                    <ImageIcon
-                      className="text-accent group-hover:scale-110 transition-transform"
-                      size={48}
+                  <div className="aspect-square relative overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-secondary/10 group-hover:bg-secondary/0 transition-colors" />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-lg mb-2">Design {item}</h3>
+                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">
-                      Brand visual & campaign
+                      {item.description}
                     </p>
                   </div>
                 </Card>

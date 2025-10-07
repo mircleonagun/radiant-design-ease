@@ -9,6 +9,7 @@ import videoIcon from "@/assets/video-icon.jpg";
 import graphicsIcon from "@/assets/graphics-icon.jpg";
 import effectsIcon from "@/assets/effects-icon.jpg";
 import socialIcon from "@/assets/social-icon.jpg";
+import heroBackground from "@/assets/portfolio/carven_gaming_arena.png";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -87,8 +88,15 @@ const LandingPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+        </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
