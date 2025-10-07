@@ -10,6 +10,7 @@ import graphicsIcon from "@/assets/graphics-icon.jpg";
 import effectsIcon from "@/assets/effects-icon.jpg";
 import socialIcon from "@/assets/social-icon.jpg";
 import heroBackground from "@/assets/portfolio/carven_gaming_arena.png";
+import jollofLogo from "@/assets/jollof-logo.png";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -89,14 +90,13 @@ const LandingPage = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
+        {/* Background Logo with Overlay */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBackground})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
-        </div>
+          className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-5"
+          style={{ backgroundImage: `url(${jollofLogo})` }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/98 to-background/95"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
