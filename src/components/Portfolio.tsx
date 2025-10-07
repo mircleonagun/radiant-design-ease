@@ -3,11 +3,31 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Play, ImageIcon, Sparkles } from "lucide-react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Sphere } from "@react-three/drei";
+
+const FloatingShape = () => {
+  return (
+    <Sphere args={[1, 32, 32]} position={[0, 0, 0]}>
+      <meshStandardMaterial color="#ff6b35" wireframe />
+    </Sphere>
+  );
+};
 
 export const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-20 lg:py-32 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="portfolio" className="py-20 lg:py-32 bg-background relative overflow-hidden">
+      {/* 3D Background Effect */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <Canvas camera={{ position: [0, 0, 5] }}>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} />
+          <FloatingShape />
+          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={2} />
+        </Canvas>
+      </div>
+      
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             Our <span className="bg-gradient-hero bg-clip-text text-transparent">Portfolio</span>
