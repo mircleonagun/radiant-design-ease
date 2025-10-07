@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Play, ImageIcon, Sparkles } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Play, ImageIcon, Sparkles, Download, Eye } from "lucide-react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
+import { toast } from "sonner";
 
 // Import portfolio images
 import guidanceJourney from "@/assets/portfolio/guidance_makes_the_journey_short.png";
@@ -40,6 +42,26 @@ const FloatingShape = () => {
 };
 
 export const Portfolio = () => {
+  const [selectedImage, setSelectedImage] = useState<{ image: string; title: string; description: string } | null>(null);
+
+  const handleDownload = async (imageUrl: string, filename: string) => {
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      toast.success("Image downloaded successfully!");
+    } catch (error) {
+      toast.error("Failed to download image");
+    }
+  };
+
   return (
     <section id="portfolio" className="py-20 lg:py-32 bg-background relative overflow-hidden">
       {/* 3D Background Effect */}
@@ -114,8 +136,28 @@ export const Portfolio = () => {
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-cover transition-transform duration-300"
                     />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => setSelectedImage(item)}
+                        className="gap-2"
+                      >
+                        <Eye size={16} />
+                        View
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => handleDownload(item.image, `${item.title.toLowerCase().replace(/\s+/g, '-')}.png`)}
+                        className="gap-2"
+                      >
+                        <Download size={16} />
+                        Download
+                      </Button>
+                    </div>
                   </div>
                   <div className="p-4">
                     <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
@@ -153,6 +195,37 @@ export const Portfolio = () => {
             </div>
           </TabsContent>
         </Tabs>
+
+        {/* Image Viewer Dialog */}
+        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+          <DialogContent className="max-w-4xl">
+            <DialogTitle className="sr-only">
+              {selectedImage?.title || "Portfolio Image"}
+            </DialogTitle>
+            {selectedImage && (
+              <div className="space-y-4">
+                <div className="relative">
+                  <img
+                    src={selectedImage.image}
+                    alt={selectedImage.title}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold">{selectedImage.title}</h3>
+                  <p className="text-muted-foreground">{selectedImage.description}</p>
+                </div>
+                <Button
+                  onClick={() => handleDownload(selectedImage.image, `${selectedImage.title.toLowerCase().replace(/\s+/g, '-')}.png`)}
+                  className="w-full gap-2"
+                >
+                  <Download size={18} />
+                  Download Image
+                </Button>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
