@@ -1,29 +1,29 @@
 import { Card } from "@/components/ui/card";
-import videoIcon from "@/assets/video-icon.jpg";
-import graphicsIcon from "@/assets/graphics-icon.jpg";
-import effectsIcon from "@/assets/effects-icon.jpg";
-import socialIcon from "@/assets/social-icon.jpg";
+import carvenGaming from "@/assets/portfolio/carven_gaming_arena.png";
+import swiftpayBusiness from "@/assets/portfolio/swiftpay_business.png";
+import crimsonCocktail from "@/assets/portfolio/crimson_vibe_cocktail.png";
+import happyNewMonth from "@/assets/portfolio/happy_new_month_july.png";
 
 const services = [
   {
     title: "Video Editing",
     description: "Professional editing for short-form content (Reels, Shorts, TikTok) and long-form videos (YouTube, IGTV). We craft compelling stories that captivate your audience.",
-    icon: videoIcon,
+    icon: carvenGaming,
   },
   {
     title: "Graphic Design",
     description: "Eye-catching branded visuals, logos, campaigns, and carousel posts that make your brand stand out and resonate with your target audience.",
-    icon: graphicsIcon,
+    icon: swiftpayBusiness,
   },
   {
     title: "Special Effects",
     description: "Stunning animations, motion graphics, and creative edits that add that 'wow' factor to your content and leave lasting impressions.",
-    icon: effectsIcon,
+    icon: crimsonCocktail,
   },
   {
     title: "Social Media Marketing",
     description: "Strategic content creation and management that grows your online presence, engages followers, and drives meaningful results.",
-    icon: socialIcon,
+    icon: happyNewMonth,
   },
 ];
 
