@@ -5,11 +5,14 @@ import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Video, Sparkles, ImageIcon, MessageSquare, Star, ArrowRight, CheckCircle2 } from "lucide-react";
-import videoIcon from "@/assets/video-icon.jpg";
-import graphicsIcon from "@/assets/graphics-icon.jpg";
-import effectsIcon from "@/assets/effects-icon.jpg";
-import socialIcon from "@/assets/social-icon.jpg";
-import heroBackground from "@/assets/portfolio/carven_gaming_arena.png";
+import carvenGaming from "@/assets/portfolio/carven_gaming_arena.png";
+import swiftpayBusiness from "@/assets/portfolio/swiftpay_business.png";
+import crimsonCocktail from "@/assets/portfolio/crimson_vibe_cocktail.png";
+import happyNewMonth from "@/assets/portfolio/happy_new_month_july.png";
+import guidanceJourney from "@/assets/portfolio/guidance_makes_the_journey_short.png";
+import nigeriaAustralia from "@/assets/portfolio/nigeria_to_australia.png";
+import mangoCooler from "@/assets/portfolio/mango_cooler.png";
+import strategyMindset from "@/assets/portfolio/strategy_mindset.png";
 import jollofLogo from "@/assets/jollof-logo.png";
 
 const LandingPage = () => {
@@ -17,25 +20,25 @@ const LandingPage = () => {
 
   const services = [
     {
-      icon: videoIcon,
+      icon: carvenGaming,
       title: "Video Editing",
       description: "Professional video editing for short-form (Reels, Shorts, TikTok) and long-form content (YouTube, IGTV). We bring your vision to life with engaging storytelling.",
       link: "/services"
     },
     {
-      icon: graphicsIcon,
+      icon: swiftpayBusiness,
       title: "Graphic Design",
       description: "Branded visuals, logos, campaigns, and carousel designs that capture attention and communicate your brand message effectively.",
       link: "/services"
     },
     {
-      icon: effectsIcon,
-      title: "Special Effects",
+      icon: crimsonCocktail,
+      title: "Social Media Management",
       description: "Stunning animations, motion graphics, and creative edits that add that extra wow factor to your content.",
       link: "/services"
     },
     {
-      icon: socialIcon,
+      icon: happyNewMonth,
       title: "Social Media Marketing",
       description: "Strategic social media management and content creation that drives engagement and grows your online presence.",
       link: "/services"
@@ -50,10 +53,10 @@ const LandingPage = () => {
   ];
 
   const portfolioItems = [
-    { title: "Short-Form Videos", category: "Reels & TikTok", image: videoIcon },
-    { title: "Brand Campaigns", category: "Graphics Design", image: graphicsIcon },
-    { title: "Motion Graphics", category: "Special Effects", image: effectsIcon },
-    { title: "Social Content", category: "Marketing", image: socialIcon }
+    { title: "Gaming Event Branding", category: "Video Editing", image: carvenGaming },
+    { title: "Fintech Marketing", category: "Graphics Design", image: swiftpayBusiness },
+    { title: "Beverage Marketing", category: "Social Media", image: crimsonCocktail },
+    { title: "Monthly Campaign", category: "Marketing", image: happyNewMonth }
   ];
 
   const testimonials = [
@@ -138,7 +141,7 @@ const LandingPage = () => {
             <div className="relative hidden lg:block animate-scale-in">
               <div className="relative rounded-3xl overflow-hidden shadow-elegant">
                 <img 
-                  src={videoIcon} 
+                  src={carvenGaming} 
                   alt="Creative work showcase" 
                   className="w-full h-[600px] object-cover"
                 />
@@ -184,10 +187,10 @@ const LandingPage = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-              <img src={videoIcon} alt="Video editing" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
-              <img src={graphicsIcon} alt="Graphic design" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
-              <img src={effectsIcon} alt="Special effects" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
-              <img src={socialIcon} alt="Social media" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
+              <img src={guidanceJourney} alt="Educational branding" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+              <img src={nigeriaAustralia} alt="Delivery service design" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
+              <img src={mangoCooler} alt="Menu design" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+              <img src={strategyMindset} alt="Trading psychology" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
             </div>
           </div>
         </div>

@@ -117,10 +117,16 @@ export const Portfolio = () => {
 
           <TabsContent value="videos" className="animate-fade-in">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
+              {[
+                { id: 1, title: "Video Project 1", url: "https://drive.google.com/file/d/17ScgIbotjjOPm-Ow4Uxs9lzpqJfsF2Ua/view?usp=drive_link" },
+                { id: 2, title: "Video Project 2", url: "https://drive.google.com/file/d/1M8zCM12fgmZzEvyW7LGawNh5x9AyG8Po/view?usp=drive_link" },
+                { id: 3, title: "Video Project 3", url: "https://drive.google.com/file/d/1kOdH9FkGGMTUUV4HrdRjHSlWYhwJvRjc/view?usp=drive_link" },
+                { id: 4, title: "Video Project 4", url: "https://drive.google.com/file/d/1g573IU35TNU1nO0IH2d3mDH54bwxnK6p/view?usp=drive_link" },
+              ].map((item) => (
                 <Card
-                  key={item}
-                  className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+                  key={item.id}
+                  className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+                  onClick={() => window.open(item.url, '_blank')}
                 >
                   <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 relative flex items-center justify-center">
                     <Play
@@ -130,9 +136,9 @@ export const Portfolio = () => {
                     <div className="absolute inset-0 bg-secondary/10 group-hover:bg-secondary/0 transition-colors" />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-lg mb-2">Video Project {item}</h3>
+                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">
-                      Short-form creative content
+                      Click to watch on Google Drive
                     </p>
                   </div>
                 </Card>
