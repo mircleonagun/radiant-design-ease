@@ -20,6 +20,13 @@ import mentalHealth from "@/assets/portfolio/mental_health_convo.png";
 import strategyMindset from "@/assets/portfolio/strategy_mindset.png";
 import swiftpay from "@/assets/portfolio/swiftpay_business.png";
 
+// Import social media management images
+import img6832 from "@/assets/portfolio/img_6832.png";
+import img6833 from "@/assets/portfolio/img_6833.png";
+import img7640 from "@/assets/portfolio/img_7640.png";
+import img7639 from "@/assets/portfolio/img_7639.png";
+import img7638 from "@/assets/portfolio/img_7638.png";
+
 const graphicsPortfolio = [
   { title: "ACEFX Academy - Guidance", description: "Educational Brand Campaign", image: guidanceJourney },
   { title: "Daper - July Campaign", description: "Monthly Celebration Design", image: happyJuly },
@@ -31,6 +38,14 @@ const graphicsPortfolio = [
   { title: "100 Talents Mental Health", description: "Social Awareness Campaign", image: mentalHealth },
   { title: "ACEFX Academy - Mindset", description: "Trading Psychology Branding", image: strategyMindset },
   { title: "Swiftpay Business", description: "Fintech App Marketing", image: swiftpay },
+];
+
+const socialMediaPortfolio = [
+  { title: "Social Campaign 1", description: "Engaging Social Media Content", image: img6832 },
+  { title: "Social Campaign 2", description: "Brand Storytelling", image: img6833 },
+  { title: "Social Campaign 3", description: "Community Engagement", image: img7640 },
+  { title: "Social Campaign 4", description: "Content Strategy", image: img7639 },
+  { title: "Social Campaign 5", description: "Digital Marketing", image: img7638 },
 ];
 
 const FloatingShape = () => {
@@ -96,7 +111,7 @@ export const Portfolio = () => {
             </TabsTrigger>
             <TabsTrigger value="effects" className="text-base">
               <Sparkles className="mr-2" size={18} />
-              Special Effects
+              Social Media
             </TabsTrigger>
           </TabsList>
 
@@ -172,22 +187,42 @@ export const Portfolio = () => {
 
           <TabsContent value="effects" className="animate-fade-in">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
+              {socialMediaPortfolio.map((item, index) => (
                 <Card
-                  key={item}
+                  key={index}
                   className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-primary/30 to-accent/30 relative flex items-center justify-center">
-                    <Sparkles
-                      className="text-primary group-hover:scale-110 group-hover:rotate-12 transition-all"
-                      size={48}
+                  <div className="aspect-square relative overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-secondary/10 group-hover:bg-secondary/0 transition-colors" />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => setSelectedImage(item)}
+                        className="gap-2"
+                      >
+                        <Eye size={16} />
+                        View
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => handleDownload(item.image, `${item.title.toLowerCase().replace(/\s+/g, '-')}.png`)}
+                        className="gap-2"
+                      >
+                        <Download size={16} />
+                        Download
+                      </Button>
+                    </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-lg mb-2">Effect {item}</h3>
+                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">
-                      Motion graphics & animation
+                      {item.description}
                     </p>
                   </div>
                 </Card>

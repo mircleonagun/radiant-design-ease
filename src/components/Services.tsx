@@ -16,7 +16,7 @@ const services = [
     icon: swiftpayBusiness,
   },
   {
-    title: "Special Effects",
+    title: "Social Media Management",
     description: "Stunning animations, motion graphics, and creative edits that add that 'wow' factor to your content and leave lasting impressions.",
     icon: crimsonCocktail,
   },
