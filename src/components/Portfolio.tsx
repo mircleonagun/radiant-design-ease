@@ -8,6 +8,11 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { toast } from "sonner";
 
+// Import video thumbnails
+import videoThumb1 from "@/assets/video-thumbnail-1.jpg";
+import videoThumb3 from "@/assets/video-thumbnail-3.jpg";
+import videoThumb4 from "@/assets/video-thumbnail-4.jpg";
+
 // Import portfolio images
 import guidanceJourney from "@/assets/portfolio/guidance_makes_the_journey_short.png";
 import happyJuly from "@/assets/portfolio/happy_new_month_july.png";
@@ -118,22 +123,29 @@ export const Portfolio = () => {
           <TabsContent value="videos" className="animate-fade-in">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { id: 1, title: "Video Project 1", url: "https://drive.google.com/file/d/17ScgIbotjjOPm-Ow4Uxs9lzpqJfsF2Ua/view?usp=drive_link" },
-                { id: 2, title: "Video Project 2", url: "https://drive.google.com/file/d/1M8zCM12fgmZzEvyW7LGawNh5x9AyG8Po/view?usp=drive_link" },
-                { id: 3, title: "Video Project 3", url: "https://drive.google.com/file/d/1kOdH9FkGGMTUUV4HrdRjHSlWYhwJvRjc/view?usp=drive_link" },
-                { id: 4, title: "Video Project 4", url: "https://drive.google.com/file/d/1g573IU35TNU1nO0IH2d3mDH54bwxnK6p/view?usp=drive_link" },
+                { id: 1, title: "Brand Storytelling Video", url: "https://drive.google.com/file/d/17ScgIbotjjOPm-Ow4Uxs9lzpqJfsF2Ua/view?usp=drive_link", thumbnail: videoThumb1 },
+                { id: 2, title: "Product Showcase", url: "https://drive.google.com/file/d/1M8zCM12fgmZzEvyW7LGawNh5x9AyG8Po/view?usp=drive_link", thumbnail: carvenGaming },
+                { id: 3, title: "Social Media Campaign", url: "https://drive.google.com/file/d/1kOdH9FkGGMTUUV4HrdRjHSlWYhwJvRjc/view?usp=drive_link", thumbnail: videoThumb3 },
+                { id: 4, title: "Event Highlights", url: "https://drive.google.com/file/d/1g573IU35TNU1nO0IH2d3mDH54bwxnK6p/view?usp=drive_link", thumbnail: videoThumb4 },
               ].map((item) => (
                 <Card
                   key={item.id}
                   className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer"
                   onClick={() => window.open(item.url, '_blank')}
                 >
-                  <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 relative flex items-center justify-center">
-                    <Play
-                      className="text-primary group-hover:scale-110 transition-transform"
-                      size={48}
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={item.thumbnail} 
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-secondary/10 group-hover:bg-secondary/0 transition-colors" />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors flex items-center justify-center">
+                      <Play
+                        className="text-white group-hover:scale-110 transition-transform"
+                        size={64}
+                        fill="white"
+                      />
+                    </div>
                   </div>
                   <div className="p-4">
                     <h3 className="font-semibold text-lg mb-2">{item.title}</h3>

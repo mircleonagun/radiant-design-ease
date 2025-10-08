@@ -14,13 +14,16 @@ import nigeriaAustralia from "@/assets/portfolio/nigeria_to_australia.png";
 import mangoCooler from "@/assets/portfolio/mango_cooler.png";
 import strategyMindset from "@/assets/portfolio/strategy_mindset.png";
 import jollofLogo from "@/assets/jollof-logo.png";
+import videoThumb1 from "@/assets/video-thumbnail-1.jpg";
+import img6832 from "@/assets/portfolio/img_6832.png";
+import img6833 from "@/assets/portfolio/img_6833.png";
 
 const LandingPage = () => {
   const navigate = useNavigate();
 
   const services = [
     {
-      icon: carvenGaming,
+      icon: videoThumb1,
       title: "Video Editing",
       description: "Professional video editing for short-form (Reels, Shorts, TikTok) and long-form content (YouTube, IGTV). We bring your vision to life with engaging storytelling.",
       link: "/services"
@@ -32,13 +35,13 @@ const LandingPage = () => {
       link: "/services"
     },
     {
-      icon: crimsonCocktail,
+      icon: img6832,
       title: "Social Media Management",
       description: "Stunning animations, motion graphics, and creative edits that add that extra wow factor to your content.",
       link: "/services"
     },
     {
-      icon: happyNewMonth,
+      icon: img6833,
       title: "Social Media Marketing",
       description: "Strategic social media management and content creation that drives engagement and grows your online presence.",
       link: "/services"
