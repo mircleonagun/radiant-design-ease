@@ -110,34 +110,35 @@ const LandingPage = () => {
               <div className="inline-block">
                 <span className="text-primary font-semibold text-lg">Creative Excellence</span>
               </div>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="block text-foreground">Crafting</span>
-                <span className="block bg-gradient-hero bg-clip-text text-transparent">Empowering</span>
-                <span className="block text-foreground">Your Brand</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                We don't just manage brands<br />
+                <span className="bg-gradient-hero bg-clip-text text-transparent">we make them unforgettable.</span>
               </h1>
-              <h2 className="text-3xl md:text-4xl font-bold text-muted-foreground">
-                A Creative Solution
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-xl">
-                Transform your brand with professional video editing, stunning graphic design, special effects, and strategic social media marketing. We bring creativity and innovation to every project.
+              <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                From content that stops the scroll to strategies that spark conversions, Jollof Creative is your all-in-one creative kitchen for social growth, design, and storytelling.
               </p>
-              <div className="flex gap-4">
-                <Button 
-                  size="lg" 
-                  onClick={() => navigate("/contact")}
-                  className="text-lg px-8"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => navigate("/portfolio")}
-                  className="text-lg px-8"
-                >
-                  View Portfolio
-                </Button>
+              <div className="mt-8">
+                <p className="text-sm text-muted-foreground mb-4 max-w-md">
+                  Your brand deserves more than attention, it deserves results.
+                </p>
+                <div className="flex gap-4">
+                  <Button 
+                    size="lg" 
+                    onClick={() => navigate("/contact")}
+                    className="text-lg px-8"
+                  >
+                    Book a Free Brand Consultation
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    onClick={() => navigate("/portfolio")}
+                    className="text-lg px-8"
+                  >
+                    Explore Our Creativity
+                  </Button>
+                </div>
               </div>
             </div>
             
@@ -203,13 +204,11 @@ const LandingPage = () => {
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Services</span>
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Creative Services</span>
             <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Our Unique And Awesome Services
+              Everything Your Brand Needs To Stand Out<br />
+              <span className="text-3xl text-muted-foreground">All In One Place</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From video editing to social media marketing, we offer comprehensive creative solutions
-            </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -304,7 +303,7 @@ const LandingPage = () => {
               size="lg"
               onClick={() => navigate("/portfolio")}
             >
-              View All Projects
+              Explore Our Creativity
             </Button>
           </div>
         </div>
