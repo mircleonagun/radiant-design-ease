@@ -32,17 +32,32 @@ import img7640 from "@/assets/portfolio/img_7640.png";
 import img7639 from "@/assets/portfolio/img_7639.png";
 import img7638 from "@/assets/portfolio/img_7638.png";
 
+// Import ACEFX Academy graphics
+import acefxJuly from "@/assets/portfolio/acefx_happy_new_month_july.png";
+import acefxJune from "@/assets/portfolio/acefx_happy_new_month_june.png";
+import acefxMay from "@/assets/portfolio/acefx_happy_new_month_may.png";
+import acefxTraders from "@/assets/portfolio/acefx_best_traders.png";
+import acefxCharts from "@/assets/portfolio/acefx_charts_fundamentals.jpg";
+
 const graphicsPortfolio = [
-  { title: "ACEFX Academy - Guidance", description: "Educational Brand Campaign", image: guidanceJourney },
-  { title: "Daper - July Campaign", description: "Monthly Celebration Design", image: happyJuly },
-  { title: "African Connect", description: "International Delivery Service", image: nigeriaAustralia },
-  { title: "Carven Gaming Arena", description: "Gaming Event Branding", image: carvenGaming },
-  { title: "Spartan League", description: "Esports Tournament Design", image: clanWar },
-  { title: "Crush Cocktails", description: "Beverage Marketing", image: crimsonVibe },
-  { title: "Wax Cocktail Bar", description: "Menu & Promotion Design", image: mangoCooler },
-  { title: "100 Talents Mental Health", description: "Social Awareness Campaign", image: mentalHealth },
-  { title: "ACEFX Academy - Mindset", description: "Trading Psychology Branding", image: strategyMindset },
-  { title: "Swiftpay Business", description: "Fintech App Marketing", image: swiftpay },
+  // Jollof Creative Portfolio
+  { title: "Daper - July Campaign", description: "Monthly Celebration Design", image: happyJuly, brand: "Jollof Creative" },
+  { title: "African Connect", description: "International Delivery Service", image: nigeriaAustralia, brand: "Jollof Creative" },
+  { title: "Carven Gaming Arena", description: "Gaming Event Branding", image: carvenGaming, brand: "Jollof Creative" },
+  { title: "Spartan League", description: "Esports Tournament Design", image: clanWar, brand: "Jollof Creative" },
+  { title: "Crush Cocktails", description: "Beverage Marketing", image: crimsonVibe, brand: "Jollof Creative" },
+  { title: "Wax Cocktail Bar", description: "Menu & Promotion Design", image: mangoCooler, brand: "Jollof Creative" },
+  { title: "100 Talents Mental Health", description: "Social Awareness Campaign", image: mentalHealth, brand: "Jollof Creative" },
+  { title: "Swiftpay Business", description: "Fintech App Marketing", image: swiftpay, brand: "Jollof Creative" },
+  
+  // ACEFX Academy Portfolio
+  { title: "ACEFX Academy - July", description: "Trading Academy Monthly Campaign", image: acefxJuly, brand: "ACEFX Academy" },
+  { title: "ACEFX Academy - June", description: "Welcome Month Campaign", image: acefxJune, brand: "ACEFX Academy" },
+  { title: "ACEFX Academy - May", description: "New Month Motivation", image: acefxMay, brand: "ACEFX Academy" },
+  { title: "ACEFX Academy - Guidance", description: "Educational Trading Mindset", image: guidanceJourney, brand: "ACEFX Academy" },
+  { title: "ACEFX Academy - Best Traders", description: "Student Success Campaign", image: acefxTraders, brand: "ACEFX Academy" },
+  { title: "ACEFX Academy - Charts & Fundamentals", description: "Trading Education Branding", image: acefxCharts, brand: "ACEFX Academy" },
+  { title: "ACEFX Academy - Mindset", description: "Trading Psychology Branding", image: strategyMindset, brand: "ACEFX Academy" },
 ];
 
 const socialMediaPortfolio = [

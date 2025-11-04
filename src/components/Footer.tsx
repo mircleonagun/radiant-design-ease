@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import jollofLogo from "@/assets/jollof-logo.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,9 +10,11 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
-              Jollof Creative
-            </h3>
+            <img 
+              src={jollofLogo} 
+              alt="Jollof Creative" 
+              className="h-12 mb-4"
+            />
             <p className="text-secondary-foreground/80 leading-relaxed">
               Transforming ideas into captivating visual experiences through 
               innovative creative solutions.
