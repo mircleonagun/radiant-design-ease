@@ -316,69 +316,86 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* ACEFX Academy Brand Showcase */}
+      {/* Featured Brands Showcase */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <Card className="overflow-hidden shadow-elegant">
-              <CardContent className="p-8 md:p-12">
-                <div className="text-center mb-8">
-                  <span className="text-primary font-semibold text-sm uppercase tracking-wider">Featured Brand</span>
-                  <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-4">
-                    ACEFX Academy
-                  </h2>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Discover our creative work for ACEFX Academy - a leading trading education platform. From motivational campaigns to educational branding, explore designs that inspire success.
-                  </p>
-                </div>
+          <div className="text-center mb-12">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Featured Brands</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-4">
+              Our Brand Partners
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* ACEFX Academy Brand Box */}
+            <Card className="overflow-hidden shadow-elegant hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold mb-3 text-center">ACEFX Academy</h3>
+                <p className="text-sm text-muted-foreground text-center mb-6">
+                  Trading education platform branding
+                </p>
                 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
-                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                <div className="grid grid-cols-3 gap-2 mb-6">
+                  <div className="aspect-square rounded-lg overflow-hidden">
                     <img 
                       src={acefxJuly} 
-                      alt="ACEFX Academy July Campaign"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      alt="ACEFX July"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                  <div className="aspect-square rounded-lg overflow-hidden">
                     <img 
                       src={acefxJune} 
-                      alt="ACEFX Academy June Campaign"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      alt="ACEFX June"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                  <div className="aspect-square rounded-lg overflow-hidden">
                     <img 
                       src={acefxMay} 
-                      alt="ACEFX Academy May Campaign"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      alt="ACEFX May"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                  <div className="aspect-square rounded-lg overflow-hidden col-span-2">
                     <img 
                       src={acefxTraders} 
-                      alt="ACEFX Best Traders"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      alt="ACEFX Traders"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                  <div className="aspect-square rounded-lg overflow-hidden">
                     <img 
                       src={acefxCharts} 
-                      alt="ACEFX Charts & Fundamentals"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      alt="ACEFX Charts"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                 </div>
                 
-                <div className="text-center">
-                  <Button 
-                    size="lg"
-                    onClick={() => window.open('https://drive.google.com/drive/folders/1N_zE7NOdcZcTeNYrsOQNLjIWJapz5nFA?usp=drive_link', '_blank')}
-                    className="gap-2"
-                  >
-                    View All ACEFX Designs
-                    <ArrowRight className="h-5 w-5" />
-                  </Button>
+                <Button 
+                  className="w-full gap-2"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = 'https://drive.google.com/drive/folders/1N_zE7NOdcZcTeNYrsOQNLjIWJapz5nFA';
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.click();
+                  }}
+                >
+                  View All Designs
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Placeholder for second brand - ready for another brand */}
+            <Card className="overflow-hidden shadow-elegant border-dashed border-2">
+              <CardContent className="p-6 flex items-center justify-center min-h-[400px]">
+                <div className="text-center text-muted-foreground">
+                  <Sparkles className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                  <p className="text-lg">Next Brand Showcase</p>
+                  <p className="text-sm">Coming Soon</p>
                 </div>
               </CardContent>
             </Card>
