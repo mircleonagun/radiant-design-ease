@@ -18,6 +18,13 @@ import videoThumb1 from "@/assets/video-thumbnail-1.jpg";
 import img6832 from "@/assets/portfolio/img_6832.png";
 import img6833 from "@/assets/portfolio/img_6833.png";
 
+// Import ACEFX Academy portfolio
+import acefxJuly from "@/assets/portfolio/acefx_happy_new_month_july.png";
+import acefxJune from "@/assets/portfolio/acefx_happy_new_month_june.png";
+import acefxMay from "@/assets/portfolio/acefx_happy_new_month_may.png";
+import acefxTraders from "@/assets/portfolio/acefx_best_traders.png";
+import acefxCharts from "@/assets/portfolio/acefx_charts_fundamentals.jpg";
+
 const LandingPage = () => {
   const navigate = useNavigate();
 
@@ -309,8 +316,78 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* ACEFX Academy Brand Showcase */}
       <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <Card className="overflow-hidden shadow-elegant">
+              <CardContent className="p-8 md:p-12">
+                <div className="text-center mb-8">
+                  <span className="text-primary font-semibold text-sm uppercase tracking-wider">Featured Brand</span>
+                  <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-4">
+                    ACEFX Academy
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Discover our creative work for ACEFX Academy - a leading trading education platform. From motivational campaigns to educational branding, explore designs that inspire success.
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                    <img 
+                      src={acefxJuly} 
+                      alt="ACEFX Academy July Campaign"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                    <img 
+                      src={acefxJune} 
+                      alt="ACEFX Academy June Campaign"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                    <img 
+                      src={acefxMay} 
+                      alt="ACEFX Academy May Campaign"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                    <img 
+                      src={acefxTraders} 
+                      alt="ACEFX Best Traders"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="aspect-square rounded-lg overflow-hidden group cursor-pointer">
+                    <img 
+                      src={acefxCharts} 
+                      alt="ACEFX Charts & Fundamentals"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <Button 
+                    size="lg"
+                    onClick={() => window.open('https://drive.google.com/drive/folders/1N_zE7NOdcZcTeNYrsOQNLjIWJapz5nFA?usp=drive_link', '_blank')}
+                    className="gap-2"
+                  >
+                    View All ACEFX Designs
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">User Reviews</span>
