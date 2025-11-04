@@ -35,8 +35,7 @@ const LandingPage = () => {
     {
       name: "ACEFX Academy",
       description: "Trading education platform branding",
-      images: [acefxJuly, acefxJune, acefxMay, acefxTraders, acefxCharts],
-      driveLink: "https://drive.google.com/drive/folders/1N_zE7NOdcZcTeNYrsOQNLjIWJapz5nFA"
+      images: [acefxJuly, acefxJune, acefxMay, acefxTraders, acefxCharts]
     },
     // Add 5 more brands here with the same structure
   ];
@@ -383,8 +382,7 @@ const LandingPage = () => {
                     {brands[currentBrandIndex].images.map((image, idx) => (
                       <div 
                         key={idx}
-                        className="aspect-square rounded-lg overflow-hidden cursor-pointer group"
-                        onClick={() => window.open(brands[currentBrandIndex].driveLink, '_blank', 'noopener,noreferrer')}
+                        className="aspect-square rounded-lg overflow-hidden group"
                       >
                         <img 
                           src={image} 
