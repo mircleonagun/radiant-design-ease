@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Video, Sparkles, ImageIcon, MessageSquare, Star, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Video, Sparkles, ImageIcon, MessageSquare, Star, ArrowRight, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import carvenGaming from "@/assets/portfolio/carven_gaming_arena.png";
 import swiftpayBusiness from "@/assets/portfolio/swiftpay_business.png";
 import crimsonCocktail from "@/assets/portfolio/crimson_vibe_cocktail.png";
@@ -27,6 +28,26 @@ import acefxCharts from "@/assets/portfolio/acefx_charts_fundamentals.jpg";
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [currentBrandIndex, setCurrentBrandIndex] = useState(0);
+
+  // Brand portfolios - you can add 5 more brands here
+  const brands = [
+    {
+      name: "ACEFX Academy",
+      description: "Trading education platform branding",
+      images: [acefxJuly, acefxJune, acefxMay, acefxTraders, acefxCharts],
+      driveLink: "https://drive.google.com/drive/folders/1N_zE7NOdcZcTeNYrsOQNLjIWJapz5nFA"
+    },
+    // Add 5 more brands here with the same structure
+  ];
+
+  const nextBrand = () => {
+    setCurrentBrandIndex((prev) => (prev + 1) % brands.length);
+  };
+
+  const prevBrand = () => {
+    setCurrentBrandIndex((prev) => (prev - 1 + brands.length) % brands.length);
+  };
 
   const services = [
     {
@@ -326,79 +347,72 @@ const LandingPage = () => {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* ACEFX Academy Brand Box */}
-            <Card className="overflow-hidden shadow-elegant hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-center">ACEFX Academy</h3>
-                <p className="text-sm text-muted-foreground text-center mb-6">
-                  Trading education platform branding
-                </p>
-                
-                <div className="grid grid-cols-3 gap-2 mb-6">
-                  <div className="aspect-square rounded-lg overflow-hidden">
-                    <img 
-                      src={acefxJuly} 
-                      alt="ACEFX July"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="aspect-square rounded-lg overflow-hidden">
-                    <img 
-                      src={acefxJune} 
-                      alt="ACEFX June"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="aspect-square rounded-lg overflow-hidden">
-                    <img 
-                      src={acefxMay} 
-                      alt="ACEFX May"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="aspect-square rounded-lg overflow-hidden col-span-2">
-                    <img 
-                      src={acefxTraders} 
-                      alt="ACEFX Traders"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="aspect-square rounded-lg overflow-hidden">
-                    <img 
-                      src={acefxCharts} 
-                      alt="ACEFX Charts"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                </div>
-                
-                <Button 
-                  className="w-full gap-2"
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = 'https://drive.google.com/drive/folders/1N_zE7NOdcZcTeNYrsOQNLjIWJapz5nFA';
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                    link.click();
-                  }}
-                >
-                  View All Designs
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Navigation Buttons */}
+              {brands.length > 1 && (
+                <>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 rounded-full w-12 h-12"
+                    onClick={prevBrand}
+                  >
+                    <ChevronLeft className="h-6 w-6" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 rounded-full w-12 h-12"
+                    onClick={nextBrand}
+                  >
+                    <ChevronRight className="h-6 w-6" />
+                  </Button>
+                </>
+              )}
 
-            {/* Placeholder for second brand - ready for another brand */}
-            <Card className="overflow-hidden shadow-elegant border-dashed border-2">
-              <CardContent className="p-6 flex items-center justify-center min-h-[400px]">
-                <div className="text-center text-muted-foreground">
-                  <Sparkles className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg">Next Brand Showcase</p>
-                  <p className="text-sm">Coming Soon</p>
-                </div>
-              </CardContent>
-            </Card>
+              {/* Brand Display */}
+              <Card className="overflow-hidden shadow-elegant">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold mb-3 text-center">{brands[currentBrandIndex].name}</h3>
+                  <p className="text-sm text-muted-foreground text-center mb-6">
+                    {brands[currentBrandIndex].description}
+                  </p>
+                  
+                  <div className="grid grid-cols-3 gap-3 mb-6">
+                    {brands[currentBrandIndex].images.map((image, idx) => (
+                      <div 
+                        key={idx}
+                        className="aspect-square rounded-lg overflow-hidden cursor-pointer group"
+                        onClick={() => window.open(brands[currentBrandIndex].driveLink, '_blank', 'noopener,noreferrer')}
+                      >
+                        <img 
+                          src={image} 
+                          alt={`${brands[currentBrandIndex].name} design ${idx + 1}`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Brand Indicator Dots */}
+                  {brands.length > 1 && (
+                    <div className="flex justify-center gap-2 mt-6">
+                      {brands.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentBrandIndex(idx)}
+                          className={`h-2 rounded-full transition-all ${
+                            idx === currentBrandIndex ? 'w-8 bg-primary' : 'w-2 bg-muted-foreground/30'
+                          }`}
+                          aria-label={`Go to brand ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
