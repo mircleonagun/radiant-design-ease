@@ -18,6 +18,7 @@ import jollofLogo from "@/assets/jollof-logo.png";
 import videoThumb1 from "@/assets/video-thumbnail-1.jpg";
 import img6832 from "@/assets/portfolio/img_6832.png";
 import img6833 from "@/assets/portfolio/img_6833.png";
+import heroAnimation from "@/assets/hero-animation.mp4";
 
 // Import ACEFX Academy portfolio
 import acefxJuly from "@/assets/portfolio/acefx_happy_new_month_july.png";
@@ -171,9 +172,12 @@ const LandingPage = () => {
             
             <div className="relative hidden lg:block animate-scale-in">
               <div className="relative rounded-3xl overflow-hidden shadow-elegant">
-                <img 
-                  src={carvenGaming} 
-                  alt="Creative work showcase" 
+                <video 
+                  src={heroAnimation} 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
