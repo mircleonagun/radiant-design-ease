@@ -99,6 +99,7 @@ export const Services = () => {
                 <img
                   src={service.icon}
                   alt={service.title}
+                  loading="lazy"
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>

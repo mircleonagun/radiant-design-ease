@@ -178,6 +178,7 @@ const LandingPage = () => {
                   loop
                   muted
                   playsInline
+                  preload="metadata"
                   className="w-full h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
@@ -222,10 +223,10 @@ const LandingPage = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-              <img src={guidanceJourney} alt="Educational branding" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
-              <img src={nigeriaAustralia} alt="Delivery service design" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
-              <img src={mangoCooler} alt="Menu design" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
-              <img src={strategyMindset} alt="Trading psychology" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
+              <img src={guidanceJourney} alt="Educational branding" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+              <img src={nigeriaAustralia} alt="Delivery service design" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
+              <img src={mangoCooler} alt="Menu design" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+              <img src={strategyMindset} alt="Trading psychology" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
             </div>
           </div>
         </div>
@@ -250,6 +251,7 @@ const LandingPage = () => {
                     <img 
                       src={service.icon} 
                       alt={service.title}
+                      loading="lazy"
                       className="w-full h-48 object-cover hover:scale-110 transition-transform duration-300"
                     />
                   </div>
@@ -316,6 +318,7 @@ const LandingPage = () => {
                   <img 
                     src={item.image} 
                     alt={item.title}
+                    loading="lazy"
                     className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
@@ -391,6 +394,7 @@ const LandingPage = () => {
                         <img 
                           src={image} 
                           alt={`${brands[currentBrandIndex].name} design ${idx + 1}`}
+                          loading="lazy"
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                         />
                       </div>

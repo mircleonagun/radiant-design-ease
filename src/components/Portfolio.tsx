@@ -152,6 +152,7 @@ export const Portfolio = () => {
                     <img 
                       src={item.thumbnail} 
                       alt={item.title}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors flex items-center justify-center">
@@ -184,6 +185,7 @@ export const Portfolio = () => {
                     <img 
                       src={item.image} 
                       alt={item.title}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
@@ -229,6 +231,7 @@ export const Portfolio = () => {
                     <img 
                       src={item.image} 
                       alt={item.title}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
