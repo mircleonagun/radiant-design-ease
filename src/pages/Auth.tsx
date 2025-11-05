@@ -6,6 +6,18 @@ import { Card } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import { z } from "zod";
+
+const signUpSchema = z.object({
+  email: z.string().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  password: z.string().min(8, "Password must be at least 8 characters").max(72, "Password must be less than 72 characters"),
+  fullName: z.string().trim().min(1, "Full name is required").max(100, "Full name must be less than 100 characters")
+});
+
+const signInSchema = z.object({
+  email: z.string().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  password: z.string().min(6, "Password must be at least 6 characters").max(72, "Password must be less than 72 characters")
+});
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true);
@@ -38,21 +50,38 @@ export default function Auth() {
     setLoading(true);
 
     try {
+      // Validate inputs based on form type
       if (isLogin) {
+        const validation = signInSchema.safeParse({ email, password });
+        if (!validation.success) {
+          const firstError = validation.error.errors[0];
+          toast.error(firstError.message);
+          setLoading(false);
+          return;
+        }
+
         const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
+          email: validation.data.email,
+          password: validation.data.password,
         });
 
         if (error) throw error;
         toast.success("Welcome back!");
       } else {
+        const validation = signUpSchema.safeParse({ email, password, fullName });
+        if (!validation.success) {
+          const firstError = validation.error.errors[0];
+          toast.error(firstError.message);
+          setLoading(false);
+          return;
+        }
+
         const { error } = await supabase.auth.signUp({
-          email,
-          password,
+          email: validation.data.email,
+          password: validation.data.password,
           options: {
             data: {
-              full_name: fullName,
+              full_name: validation.data.fullName,
             },
             emailRedirectTo: `${window.location.origin}/upload`,
           },

@@ -9,6 +9,13 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Upload as UploadIcon, Loader2, LogOut, Image, Video } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
+import { z } from "zod";
+
+const uploadSchema = z.object({
+  title: z.string().trim().min(1, "Title is required").max(200, "Title must be less than 200 characters"),
+  description: z.string().max(2000, "Description must be less than 2000 characters").optional(),
+  category: z.enum(["videos", "graphics", "effects"])
+});
 
 export default function Upload() {
   const [user, setUser] = useState<User | null>(null);
@@ -70,6 +77,19 @@ export default function Upload() {
       return;
     }
 
+    // Validate form inputs
+    const validation = uploadSchema.safeParse({
+      title,
+      description: description || undefined,
+      category
+    });
+
+    if (!validation.success) {
+      const firstError = validation.error.errors[0];
+      toast.error(firstError.message);
+      return;
+    }
+
     setUploading(true);
 
     try {
@@ -97,10 +117,10 @@ export default function Upload() {
         .from("media_items")
         .insert({
           user_id: user.id,
-          title,
-          description,
+          title: validation.data.title,
+          description: validation.data.description || null,
           media_type: mediaType,
-          category,
+          category: validation.data.category,
           file_path: filePath,
           file_url: publicUrl,
         });

@@ -5,6 +5,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  subject: z.string().trim().min(1, "Subject is required").max(200, "Subject must be less than 200 characters"),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters")
+});
+
+const newsletterSchema = z.object({
+  email: z.string().email("Invalid email address").max(255, "Email must be less than 255 characters")
+});
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,11 +25,38 @@ export const Contact = () => {
     subject: "",
     message: "",
   });
+  const [newsletterEmail, setNewsletterEmail] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data
+    const validation = contactSchema.safeParse(formData);
+    if (!validation.success) {
+      const firstError = validation.error.errors[0];
+      toast.error(firstError.message);
+      return;
+    }
+
+    // In a real app, you would send this data to a backend service
     toast.success("Message sent! We'll get back to you soon.");
     setFormData({ name: "", email: "", subject: "", message: "" });
+  };
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate newsletter email
+    const validation = newsletterSchema.safeParse({ email: newsletterEmail });
+    if (!validation.success) {
+      const firstError = validation.error.errors[0];
+      toast.error(firstError.message);
+      return;
+    }
+
+    // In a real app, you would send this to a newsletter service
+    toast.success("Successfully subscribed to newsletter!");
+    setNewsletterEmail("");
   };
 
   const handleChange = (
@@ -179,18 +218,22 @@ export const Contact = () => {
               <p className="text-primary-foreground/90 mb-4 text-sm">
                 Subscribe to our newsletter for creative tips and industry trends
               </p>
-              <div className="flex gap-2">
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
                 <Input
                   type="email"
                   placeholder="Your email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
                   className="bg-primary-foreground/20 border-primary-foreground/30 text-primary-foreground placeholder:text-primary-foreground/60"
+                  required
                 />
                 <Button
+                  type="submit"
                   className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 flex-shrink-0"
                 >
                   Subscribe
                 </Button>
-              </div>
+              </form>
             </Card>
           </div>
         </div>
