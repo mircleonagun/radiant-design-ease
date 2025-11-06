@@ -207,8 +207,8 @@ const LandingPage = () => {
               </div>
             </div>
             
-            <div className="relative hidden lg:block animate-scale-in">
-              <div className="relative rounded-3xl overflow-hidden shadow-elegant">
+            <div className="relative animate-scale-in mt-8 lg:mt-0">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant">
                 <video 
                   src={heroAnimation} 
                   autoPlay
@@ -216,13 +216,13 @@ const LandingPage = () => {
                   muted
                   playsInline
                   preload="metadata"
-                  className="w-full h-[600px] object-cover"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-primary text-primary-foreground rounded-2xl p-6 shadow-lg">
-                <div className="text-4xl font-bold">5+</div>
-                <div className="text-sm">Years Experience</div>
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-8 sm:-left-8 bg-primary text-primary-foreground rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg">
+                <div className="text-2xl sm:text-4xl font-bold">5+</div>
+                <div className="text-xs sm:text-sm">Years Experience</div>
               </div>
             </div>
           </div>
