@@ -27,6 +27,13 @@ import acefxMay from "@/assets/portfolio/acefx_happy_new_month_may.png";
 import acefxTraders from "@/assets/portfolio/acefx_best_traders.png";
 import acefxCharts from "@/assets/portfolio/acefx_charts_fundamentals.jpg";
 
+// Import SwiftPay portfolio
+import swiftpayCreateAccount from "@/assets/portfolio/swiftpay_create_account.png";
+import swiftpayVirtualAccount from "@/assets/portfolio/swiftpay_virtual_account.png";
+import swiftpayStartWeek from "@/assets/portfolio/swiftpay_start_week.png";
+import chaleLetsGo from "@/assets/portfolio/chale_lets_go.png";
+import chaleRaffle from "@/assets/portfolio/chale_raffle.jpg";
+
 const LandingPage = () => {
   const navigate = useNavigate();
   const [currentBrandIndex, setCurrentBrandIndex] = useState(0);
@@ -38,7 +45,12 @@ const LandingPage = () => {
       description: "Trading education platform branding",
       images: [acefxJuly, acefxJune, acefxMay, acefxTraders, acefxCharts]
     },
-    // Add 5 more brands here with the same structure
+    {
+      name: "SwiftPay",
+      description: "Fintech banking and payment solutions",
+      images: [swiftpayCreateAccount, swiftpayVirtualAccount, swiftpayStartWeek, chaleLetsGo, chaleRaffle]
+    },
+    // Add 4 more brands here with the same structure
   ];
 
   const nextBrand = () => {
