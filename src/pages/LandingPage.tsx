@@ -158,7 +158,7 @@ const LandingPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 md:py-0">
         {/* Background Logo with Overlay */}
         <div 
           className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-5"
@@ -167,39 +167,41 @@ const LandingPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/98 to-background/95"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
               <div className="inline-block">
-                <span className="text-primary font-semibold text-lg">Creative Excellence</span>
+                <span className="text-primary font-semibold text-sm sm:text-base md:text-lg">Creative Excellence</span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                We don't just manage brands<br />
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                We don't just manage brands<br className="hidden sm:block" />
                 <span className="bg-gradient-hero bg-clip-text text-transparent">we make them unforgettable.</span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
                 From content that stops the scroll to strategies that spark conversions, Jollof Creative is your all-in-one creative kitchen for social growth, design, and storytelling.
               </p>
-              <div className="mt-8">
-                <p className="text-sm text-muted-foreground mb-4 max-w-md">
+              <div className="mt-6 md:mt-8">
+                <p className="text-sm text-muted-foreground mb-3 sm:mb-4 max-w-md">
                   Your brand deserves more than attention, it deserves results.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Button 
                     size="lg" 
                     onClick={() => navigate("/contact")}
-                    className="text-lg px-8"
+                    className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
                   >
-                    Book a Free Brand Consultation
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <span className="hidden sm:inline">Book a Free Brand Consultation</span>
+                    <span className="sm:hidden">Free Consultation</span>
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                   <Button 
                     size="lg" 
                     variant="outline"
                     onClick={() => navigate("/portfolio")}
-                    className="text-lg px-8"
+                    className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
                   >
-                    Explore Our Creativity
+                    <span className="hidden sm:inline">Explore Our Creativity</span>
+                    <span className="sm:hidden">View Portfolio</span>
                   </Button>
                 </div>
               </div>
