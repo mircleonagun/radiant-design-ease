@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -34,9 +34,27 @@ import swiftpayStartWeek from "@/assets/portfolio/swiftpay_start_week.png";
 import chaleLetsGo from "@/assets/portfolio/chale_lets_go.png";
 import chaleRaffle from "@/assets/portfolio/chale_raffle.jpg";
 
+// Import CRUSH/Africa Film Festival portfolio
+import africaFilmFest2025 from "@/assets/portfolio/africa_film_fest_2025.jpg";
+import africaFilmFestWhy from "@/assets/portfolio/africa_film_fest_why.jpg";
+import whatIsCrush from "@/assets/portfolio/what_is_crush.png";
+import crushCommunity from "@/assets/portfolio/crush_community.png";
+import crushVibeMemories from "@/assets/portfolio/crush_vibe_memories.png";
+import chaleLetsGoEvent from "@/assets/portfolio/chale_lets_go_event.png";
+import chaleRaffleEvent from "@/assets/portfolio/chale_raffle_event.jpg";
+
 const LandingPage = () => {
   const navigate = useNavigate();
   const [currentBrandIndex, setCurrentBrandIndex] = useState(0);
+
+  // Auto-slide carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBrandIndex((prevIndex) => (prevIndex + 1) % brands.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Brand portfolios - you can add 5 more brands here
   const brands = [
@@ -50,7 +68,12 @@ const LandingPage = () => {
       description: "Fintech banking and payment solutions",
       images: [swiftpayCreateAccount, swiftpayVirtualAccount, swiftpayStartWeek, chaleLetsGo, chaleRaffle]
     },
-    // Add 4 more brands here with the same structure
+    {
+      name: "CRUSH x Africa Film Festival",
+      description: "Event branding and community engagement",
+      images: [africaFilmFest2025, africaFilmFestWhy, whatIsCrush, crushCommunity, crushVibeMemories, chaleLetsGoEvent, chaleRaffleEvent]
+    },
+    // Add 3 more brands here with the same structure
   ];
 
   const nextBrand = () => {
