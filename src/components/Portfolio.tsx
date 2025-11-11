@@ -9,7 +9,8 @@ import { OrbitControls, Sphere } from "@react-three/drei";
 import { toast } from "sonner";
 
 // Import video thumbnails
-import videoThumb1 from "@/assets/video-thumbnail-1.jpg";
+import videoThumbAcefx from "@/assets/video-thumbnail-acefx.png";
+import videoThumbPapaJones from "@/assets/video-thumbnail-papa-jones.png";
 import videoThumb3 from "@/assets/video-thumbnail-3.jpg";
 import videoThumb4 from "@/assets/video-thumbnail-4.jpg";
 
@@ -138,8 +139,8 @@ export const Portfolio = () => {
           <TabsContent value="videos" className="animate-fade-in">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { id: 1, title: "Brand Storytelling Video", url: "https://drive.google.com/file/d/17ScgIbotjjOPm-Ow4Uxs9lzpqJfsF2Ua/view?usp=drive_link", thumbnail: videoThumb1 },
-                { id: 2, title: "Product Showcase", url: "https://drive.google.com/file/d/1M8zCM12fgmZzEvyW7LGawNh5x9AyG8Po/view?usp=drive_link", thumbnail: carvenGaming },
+                { id: 1, title: "Brand Storytelling Video", url: "https://drive.google.com/file/d/17ScgIbotjjOPm-Ow4Uxs9lzpqJfsF2Ua/view?usp=drive_link", thumbnail: videoThumbAcefx },
+                { id: 2, title: "Product Showcase", url: "https://drive.google.com/file/d/1M8zCM12fgmZzEvyW7LGawNh5x9AyG8Po/view?usp=drive_link", thumbnail: videoThumbPapaJones },
                 { id: 3, title: "Social Media Campaign", url: "https://drive.google.com/file/d/1kOdH9FkGGMTUUV4HrdRjHSlWYhwJvRjc/view?usp=drive_link", thumbnail: videoThumb3 },
                 { id: 4, title: "Event Highlights", url: "https://drive.google.com/file/d/1g573IU35TNU1nO0IH2d3mDH54bwxnK6p/view?usp=drive_link", thumbnail: videoThumb4 },
               ].map((item) => (
