@@ -15,10 +15,11 @@ import nigeriaAustralia from "@/assets/portfolio/nigeria_to_australia.png";
 import mangoCooler from "@/assets/portfolio/mango_cooler.png";
 import strategyMindset from "@/assets/portfolio/strategy_mindset.png";
 import jollofLogo from "@/assets/jollof-logo.png";
-import videoThumb1 from "@/assets/video-thumbnail-1.jpg";
-import img6832 from "@/assets/portfolio/img_6832.png";
-import img6833 from "@/assets/portfolio/img_6833.png";
 import heroAnimation from "@/assets/hero-animation.mp4";
+import videoIcon from "@/assets/video-icon.jpg";
+import graphicsIcon from "@/assets/graphics-icon.jpg";
+import socialIcon from "@/assets/social-icon.jpg";
+import socialPlatformsIcon from "@/assets/social-platforms-icon.jpg";
 
 // Import ACEFX Academy portfolio
 import acefxJuly from "@/assets/portfolio/acefx_happy_new_month_july.png";
@@ -86,25 +87,25 @@ const LandingPage = () => {
 
   const services = [
     {
-      icon: videoThumb1,
+      icon: videoIcon,
       title: "Video Editing",
       description: "Professional video editing for short-form (Reels, Shorts, TikTok) and long-form content (YouTube, IGTV). We bring your vision to life with engaging storytelling.",
       link: "/services"
     },
     {
-      icon: swiftpayBusiness,
+      icon: graphicsIcon,
       title: "Graphic Design",
       description: "Branded visuals, logos, campaigns, and carousel designs that capture attention and communicate your brand message effectively.",
       link: "/services"
     },
     {
-      icon: img6832,
+      icon: socialIcon,
       title: "Social Media Management",
       description: "Stunning animations, motion graphics, and creative edits that add that extra wow factor to your content.",
       link: "/services"
     },
     {
-      icon: img6833,
+      icon: socialPlatformsIcon,
       title: "Social Media Marketing",
       description: "Strategic social media management and content creation that drives engagement and grows your online presence.",
       link: "/services"

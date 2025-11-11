@@ -1,8 +1,9 @@
 import { Card } from "@/components/ui/card";
-import carvenGaming from "@/assets/portfolio/carven_gaming_arena.png";
-import swiftpayBusiness from "@/assets/portfolio/swiftpay_business.png";
-import crimsonCocktail from "@/assets/portfolio/crimson_vibe_cocktail.png";
-import happyNewMonth from "@/assets/portfolio/happy_new_month_july.png";
+import graphicsIcon from "@/assets/graphics-icon.jpg";
+import videoIcon from "@/assets/video-icon.jpg";
+import socialIcon from "@/assets/social-icon.jpg";
+import socialPlatformsIcon from "@/assets/social-platforms-icon.jpg";
+import webDevIcon from "@/assets/web-dev-icon.jpg";
 
 const services = [
   {
@@ -15,7 +16,7 @@ const services = [
       "Paid ads setup & management",
       "Influencer campaign management"
     ],
-    icon: happyNewMonth,
+    icon: socialPlatformsIcon,
   },
   {
     title: "Graphic Design",
@@ -26,7 +27,7 @@ const services = [
       "Marketing materials",
       "Branded templates"
     ],
-    icon: swiftpayBusiness,
+    icon: graphicsIcon,
   },
   {
     title: "Video Editing",
@@ -37,7 +38,7 @@ const services = [
       "Motion graphics, intros/outros",
       "Animated text and transitions"
     ],
-    icon: carvenGaming,
+    icon: videoIcon,
   },
   {
     title: "Content Strategy & Branding",
@@ -48,7 +49,7 @@ const services = [
       "Content strategy blueprint",
       "Social content planning"
     ],
-    icon: crimsonCocktail,
+    icon: graphicsIcon,
   },
   {
     title: "Social Media Management",
@@ -59,7 +60,7 @@ const services = [
       "Real-time response and engagement",
       "Monthly reporting and insights"
     ],
-    icon: crimsonCocktail,
+    icon: socialIcon,
   },
   {
     title: "Web Design & Development",
@@ -71,7 +72,7 @@ const services = [
       "Integration with social media, email, and analytics tools",
       "Maintenance and performance updates"
     ],
-    icon: swiftpayBusiness,
+    icon: webDevIcon,
   },
 ];
 
