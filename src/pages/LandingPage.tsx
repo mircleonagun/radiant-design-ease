@@ -6,14 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Video, Sparkles, ImageIcon, MessageSquare, Star, ArrowRight, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
-import carvenGaming from "@/assets/portfolio/carven_gaming_arena.png";
-import swiftpayBusiness from "@/assets/portfolio/swiftpay_business.png";
-import crimsonCocktail from "@/assets/portfolio/crimson_vibe_cocktail.png";
-import happyNewMonth from "@/assets/portfolio/happy_new_month_july.png";
-import guidanceJourney from "@/assets/portfolio/guidance_makes_the_journey_short.png";
-import nigeriaAustralia from "@/assets/portfolio/nigeria_to_australia.png";
-import mangoCooler from "@/assets/portfolio/mango_cooler.png";
-import strategyMindset from "@/assets/portfolio/strategy_mindset.png";
+// New portfolio images
+import naseniInnovate2Days from "@/assets/portfolio/naseni_innovate_2days.jpg";
+import naseniInnovate4Days from "@/assets/portfolio/naseni_innovate_4days.jpg";
+import acefxWelcomeJune from "@/assets/portfolio/acefx_welcome_june.png";
+import acefxWelcomeMay from "@/assets/portfolio/acefx_welcome_may.png";
+import daperAugust from "@/assets/portfolio/daper_august.jpg";
+import swiftpayCreateAccountNew from "@/assets/portfolio/swiftpay_create_account_new.png";
 import jollofLogo from "@/assets/jollof-logo.png";
 import heroAnimation from "@/assets/hero-animation.mp4";
 import videoIcon from "@/assets/video-icon.jpg";
@@ -57,24 +56,33 @@ const LandingPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Brand portfolios - you can add 5 more brands here
+  // Brand portfolios
   const brands = [
     {
       name: "ACEFX Academy",
       description: "Trading education platform branding",
-      images: [acefxJuly, acefxJune, acefxMay, acefxTraders, acefxCharts]
+      images: [acefxWelcomeJune, acefxWelcomeMay, acefxJuly, acefxTraders, acefxCharts]
     },
     {
       name: "SwiftPay",
       description: "Fintech banking and payment solutions",
-      images: [swiftpayCreateAccount, swiftpayVirtualAccount, swiftpayStartWeek, chaleLetsGo, chaleRaffle]
+      images: [swiftpayCreateAccountNew, swiftpayVirtualAccount, swiftpayStartWeek, chaleLetsGo, chaleRaffle]
+    },
+    {
+      name: "NASENI Innovation Hub",
+      description: "Innovation and technology initiatives",
+      images: [naseniInnovate2Days, naseniInnovate4Days]
+    },
+    {
+      name: "Daper",
+      description: "Social messaging platform branding",
+      images: [daperAugust]
     },
     {
       name: "CRUSH x Africa Film Festival",
       description: "Event branding and community engagement",
       images: [africaFilmFest2025, africaFilmFestWhy, whatIsCrush, crushCommunity, crushVibeMemories, chaleLetsGoEvent, chaleRaffleEvent]
-    },
-    // Add 3 more brands here with the same structure
+    }
   ];
 
   const nextBrand = () => {
@@ -120,10 +128,10 @@ const LandingPage = () => {
   ];
 
   const portfolioItems = [
-    { title: "Gaming Event Branding", category: "Video Editing", image: carvenGaming },
-    { title: "Fintech Marketing", category: "Graphics Design", image: swiftpayBusiness },
-    { title: "Beverage Marketing", category: "Social Media", image: crimsonCocktail },
-    { title: "Monthly Campaign", category: "Marketing", image: happyNewMonth }
+    { title: "Trading Education Campaign", category: "Graphic Design", image: acefxWelcomeJune },
+    { title: "Fintech Account Creation", category: "Graphic Design", image: swiftpayCreateAccountNew },
+    { title: "Innovation Initiative", category: "Event Marketing", image: naseniInnovate2Days },
+    { title: "Social Platform Launch", category: "Social Media", image: daperAugust }
   ];
 
   const testimonials = [
@@ -261,10 +269,10 @@ const LandingPage = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-              <img src={guidanceJourney} alt="Educational branding" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
-              <img src={nigeriaAustralia} alt="Delivery service design" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
-              <img src={mangoCooler} alt="Menu design" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
-              <img src={strategyMindset} alt="Trading psychology" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
+              <img src={acefxWelcomeMay} alt="Trading education branding" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+              <img src={naseniInnovate4Days} alt="Innovation initiative" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
+              <img src={swiftpayCreateAccountNew} alt="Fintech design" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover" />
+              <img src={daperAugust} alt="Social platform branding" loading="lazy" className="rounded-2xl shadow-lg w-full h-64 object-cover mt-8" />
             </div>
           </div>
         </div>
