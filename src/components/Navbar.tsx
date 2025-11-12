@@ -60,13 +60,6 @@ export const Navbar = () => {
               Reviews
             </button>
             <Button
-              variant="ghost"
-              onClick={() => handleNavigation("/auth")}
-              className="text-foreground hover:text-primary"
-            >
-              Sign In
-            </Button>
-            <Button
               onClick={() => handleNavigation("/contact")}
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
             >
@@ -121,13 +114,6 @@ export const Navbar = () => {
               >
                 Reviews
               </button>
-              <Button
-                variant="outline"
-                onClick={() => handleNavigation("/auth")}
-                className="w-full"
-              >
-                Sign In
-              </Button>
               <Button
                 onClick={() => handleNavigation("/contact")}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"
