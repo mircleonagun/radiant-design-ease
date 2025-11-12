@@ -14,7 +14,7 @@ import acefxWelcomeMay from "@/assets/portfolio/acefx_welcome_may.png";
 import daperAugust from "@/assets/portfolio/daper_august.jpg";
 import swiftpayCreateAccountNew from "@/assets/portfolio/swiftpay_create_account_new.png";
 import jollofLogo from "@/assets/jollof-logo.png";
-import heroAnimation from "@/assets/hero-animation.mp4";
+import heroBg from "@/assets/hero-bg.jpg";
 import videoIcon from "@/assets/video-icon.jpg";
 import graphicsIcon from "@/assets/graphics-icon.jpg";
 import socialIcon from "@/assets/social-icon.jpg";
@@ -218,13 +218,10 @@ const LandingPage = () => {
             
             <div className="relative animate-scale-in mt-8 lg:mt-0">
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant">
-                <video 
-                  src={heroAnimation} 
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
+                <img 
+                  src={heroBg} 
+                  alt="Jollof Creative Team"
+                  loading="lazy"
                   className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
