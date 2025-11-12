@@ -104,15 +104,7 @@ export const Portfolio = () => {
 
   return (
     <section id="portfolio" className="py-20 lg:py-32 bg-background relative overflow-hidden">
-      {/* 3D Background Effect */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <FloatingShape />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={2} />
-        </Canvas>
-      </div>
+      {/* Removed 3D Canvas for performance */}
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
