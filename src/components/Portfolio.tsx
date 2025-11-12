@@ -16,8 +16,6 @@ import videoThumb4 from "@/assets/video-thumbnail-4.jpg";
 
 // Import portfolio images
 import guidanceJourney from "@/assets/portfolio/guidance_makes_the_journey_short.png";
-import happyJuly from "@/assets/portfolio/happy_new_month_july.png";
-import nigeriaAustralia from "@/assets/portfolio/nigeria_to_australia.png";
 import carvenGaming from "@/assets/portfolio/carven_gaming_arena.png";
 import clanWar from "@/assets/portfolio/clan_war_invite.png";
 import crimsonVibe from "@/assets/portfolio/crimson_vibe_cocktail.png";
@@ -25,6 +23,10 @@ import mangoCooler from "@/assets/portfolio/mango_cooler.png";
 import mentalHealth from "@/assets/portfolio/mental_health_convo.png";
 import strategyMindset from "@/assets/portfolio/strategy_mindset.png";
 import swiftpay from "@/assets/portfolio/swiftpay_business.png";
+import mentalHealthNew from "@/assets/portfolio/100_talents_mental_health.png";
+import prettyBouji from "@/assets/portfolio/wax_pretty_bouji.png";
+import swiftpayChristmas from "@/assets/portfolio/swiftpay_christmas.png";
+import tecnoBattle from "@/assets/portfolio/tecno_battle_royale.png";
 
 // Import social media management images
 import img6832 from "@/assets/portfolio/img_6832.png";
@@ -42,8 +44,10 @@ import acefxCharts from "@/assets/portfolio/acefx_charts_fundamentals.jpg";
 
 const graphicsPortfolio = [
   // Jollof Creative Portfolio
-  { title: "Daper - July Campaign", description: "Monthly Celebration Design", image: happyJuly, brand: "Jollof Creative" },
-  { title: "African Connect", description: "International Delivery Service", image: nigeriaAustralia, brand: "Jollof Creative" },
+  { title: "100 Talents - Men's Mental Health", description: "Social Awareness Campaign", image: mentalHealthNew, brand: "Jollof Creative" },
+  { title: "WAX Cocktail Bar - Pretty & Bouji", description: "Event Promotion Design", image: prettyBouji, brand: "Jollof Creative" },
+  { title: "SwiftPay - Christmas Campaign", description: "Holiday Marketing Design", image: swiftpayChristmas, brand: "Jollof Creative" },
+  { title: "TECNO - Battle Royale Gaming", description: "Gaming Event Promotion", image: tecnoBattle, brand: "Jollof Creative" },
   { title: "Carven Gaming Arena", description: "Gaming Event Branding", image: carvenGaming, brand: "Jollof Creative" },
   { title: "Spartan League", description: "Esports Tournament Design", image: clanWar, brand: "Jollof Creative" },
   { title: "Crush Cocktails", description: "Beverage Marketing", image: crimsonVibe, brand: "Jollof Creative" },
