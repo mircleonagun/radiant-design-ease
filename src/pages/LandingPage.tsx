@@ -15,7 +15,7 @@ import daperAugust from "@/assets/portfolio/daper_august.jpg";
 import swiftpayCreateAccountNew from "@/assets/portfolio/swiftpay_create_account_new.png";
 import jollofLogo from "@/assets/jollof-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
-import videoIcon from "@/assets/video-icon.jpg";
+import videoIcon from "@/assets/video-editing-icon-new.png";
 import graphicsIcon from "@/assets/graphics-design-icon.png";
 import socialIcon from "@/assets/social-icon.jpg";
 import socialPlatformsIcon from "@/assets/social-platforms-icon.jpg";
