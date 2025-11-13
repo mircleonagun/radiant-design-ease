@@ -3,12 +3,13 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { Play, Sparkles, Download, Eye } from "lucide-react";
+import { Sparkles, Download, Eye } from "lucide-react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { toast } from "sonner";
 import graphicsDesignIcon from "@/assets/graphics-design-icon.png";
 import videoEditingIcon from "@/assets/video-editing-icon-new.png";
+import playButtonIcon from "@/assets/play-button-icon.png";
 
 // Import video thumbnails
 import videoThumbAcefx from "@/assets/video-thumbnail-acefx.png";
@@ -155,10 +156,10 @@ export const Portfolio = () => {
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors flex items-center justify-center">
-                      <Play
-                        className="text-white group-hover:scale-110 transition-transform"
-                        size={64}
-                        fill="white"
+                      <img 
+                        src={playButtonIcon} 
+                        alt="Play" 
+                        className="w-16 h-16 group-hover:scale-110 transition-transform"
                       />
                     </div>
                   </div>
