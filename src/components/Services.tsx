@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import webSocialIcon from "@/assets/web-social-icon.jpg";
 import mediaPlayIcon from "@/assets/media-play-icon.jpg";
-import designPenIcon from "@/assets/design-pen-icon.jpg";
+import designPenIcon from "@/assets/graphics-design-icon.png";
 import videoEditingIcon from "@/assets/video-editing-icon.jpg";
 
 const services = [
