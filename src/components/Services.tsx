@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import webSocialIcon from "@/assets/web-social-icon.jpg";
-import mediaPlayIcon from "@/assets/media-play-icon.jpg";
+import socialMediaIcon from "@/assets/social-media-management-icon.png";
 import designPenIcon from "@/assets/graphics-design-icon.png";
 import videoEditingIcon from "@/assets/video-editing-icon.jpg";
 
@@ -59,7 +59,7 @@ const services = [
       "Real-time response and engagement",
       "Monthly reporting and insights"
     ],
-    icon: mediaPlayIcon,
+    icon: socialMediaIcon,
   },
   {
     title: "Web Design & Development",

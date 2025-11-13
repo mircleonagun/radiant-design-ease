@@ -17,7 +17,7 @@ import jollofLogo from "@/assets/jollof-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import videoIcon from "@/assets/video-editing-icon-new.png";
 import graphicsIcon from "@/assets/graphics-design-icon.png";
-import socialIcon from "@/assets/social-icon.jpg";
+import socialIcon from "@/assets/social-media-management-icon.png";
 import socialPlatformsIcon from "@/assets/social-platforms-icon.jpg";
 
 // Import ACEFX Academy portfolio
