@@ -1,9 +1,8 @@
 import { Card } from "@/components/ui/card";
-import graphicsIcon from "@/assets/graphics-icon.jpg";
-import videoIcon from "@/assets/video-icon.jpg";
-import socialIcon from "@/assets/social-icon.jpg";
-import socialPlatformsIcon from "@/assets/social-platforms-icon.jpg";
-import webDevIcon from "@/assets/web-dev-icon.jpg";
+import webSocialIcon from "@/assets/web-social-icon.jpg";
+import mediaPlayIcon from "@/assets/media-play-icon.jpg";
+import designPenIcon from "@/assets/design-pen-icon.jpg";
+import videoEditingIcon from "@/assets/video-editing-icon.jpg";
 
 const services = [
   {
@@ -16,7 +15,7 @@ const services = [
       "Paid ads setup & management",
       "Influencer campaign management"
     ],
-    icon: socialPlatformsIcon,
+    icon: webSocialIcon,
   },
   {
     title: "Graphic Design",
@@ -27,7 +26,7 @@ const services = [
       "Marketing materials",
       "Branded templates"
     ],
-    icon: graphicsIcon,
+    icon: designPenIcon,
   },
   {
     title: "Video Editing",
@@ -38,7 +37,7 @@ const services = [
       "Motion graphics, intros/outros",
       "Animated text and transitions"
     ],
-    icon: videoIcon,
+    icon: videoEditingIcon,
   },
   {
     title: "Content Strategy & Branding",
@@ -49,7 +48,7 @@ const services = [
       "Content strategy blueprint",
       "Social content planning"
     ],
-    icon: graphicsIcon,
+    icon: designPenIcon,
   },
   {
     title: "Social Media Management",
@@ -60,7 +59,7 @@ const services = [
       "Real-time response and engagement",
       "Monthly reporting and insights"
     ],
-    icon: socialIcon,
+    icon: mediaPlayIcon,
   },
   {
     title: "Web Design & Development",
@@ -72,7 +71,7 @@ const services = [
       "Integration with social media, email, and analytics tools",
       "Maintenance and performance updates"
     ],
-    icon: webDevIcon,
+    icon: webSocialIcon,
   },
 ];
 
