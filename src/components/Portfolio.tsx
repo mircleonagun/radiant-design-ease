@@ -8,6 +8,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { toast } from "sonner";
 import graphicsDesignIcon from "@/assets/graphics-design-icon.png";
+import videoEditingIcon from "@/assets/video-editing-icon-new.png";
 
 // Import video thumbnails
 import videoThumbAcefx from "@/assets/video-thumbnail-acefx.png";
@@ -120,7 +121,7 @@ export const Portfolio = () => {
         <Tabs defaultValue="videos" className="w-full">
           <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3 mb-12">
             <TabsTrigger value="videos" className="text-base">
-              <Play className="mr-2" size={18} />
+              <img src={videoEditingIcon} alt="Videos" className="mr-2 w-[18px] h-[18px] object-contain" />
               Videos
             </TabsTrigger>
             <TabsTrigger value="graphics" className="text-base">
