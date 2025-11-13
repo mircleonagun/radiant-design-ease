@@ -3,6 +3,7 @@ import socialMarketingIcon from "@/assets/social-media-marketing-icon.png";
 import socialMediaIcon from "@/assets/social-media-management-icon.png";
 import designPenIcon from "@/assets/graphics-design-icon.png";
 import videoEditingIcon from "@/assets/video-editing-icon.jpg";
+import contentStrategyIcon from "@/assets/content-strategy-icon.png";
 
 const services = [
   {
@@ -48,7 +49,7 @@ const services = [
       "Content strategy blueprint",
       "Social content planning"
     ],
-    icon: designPenIcon,
+    icon: contentStrategyIcon,
   },
   {
     title: "Social Media Management",
