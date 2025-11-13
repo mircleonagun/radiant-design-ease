@@ -160,9 +160,6 @@ export const Portfolio = () => {
                       />
                     </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg">{item.title}</h3>
-                  </div>
                 </Card>
               ))}
             </div>
@@ -203,12 +200,6 @@ export const Portfolio = () => {
                       </Button>
                     </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </div>
                 </Card>
               ))}
             </div>
@@ -248,12 +239,6 @@ export const Portfolio = () => {
                         Download
                       </Button>
                     </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
                   </div>
                 </Card>
               ))}
