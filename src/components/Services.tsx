@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import webSocialIcon from "@/assets/web-social-icon.jpg";
+import socialMarketingIcon from "@/assets/social-media-marketing-icon.png";
 import socialMediaIcon from "@/assets/social-media-management-icon.png";
 import designPenIcon from "@/assets/graphics-design-icon.png";
 import videoEditingIcon from "@/assets/video-editing-icon.jpg";
@@ -15,7 +15,7 @@ const services = [
       "Paid ads setup & management",
       "Influencer campaign management"
     ],
-    icon: webSocialIcon,
+    icon: socialMarketingIcon,
   },
   {
     title: "Graphic Design",
@@ -71,7 +71,7 @@ const services = [
       "Integration with social media, email, and analytics tools",
       "Maintenance and performance updates"
     ],
-    icon: webSocialIcon,
+    icon: socialMarketingIcon,
   },
 ];
 
