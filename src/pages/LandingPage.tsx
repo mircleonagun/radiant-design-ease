@@ -16,7 +16,7 @@ import swiftpayCreateAccountNew from "@/assets/portfolio/swiftpay_create_account
 import jollofLogo from "@/assets/jollof-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import videoIcon from "@/assets/video-icon.jpg";
-import graphicsIcon from "@/assets/graphics-icon.jpg";
+import graphicsIcon from "@/assets/graphics-design-icon.png";
 import socialIcon from "@/assets/social-icon.jpg";
 import socialPlatformsIcon from "@/assets/social-platforms-icon.jpg";
 

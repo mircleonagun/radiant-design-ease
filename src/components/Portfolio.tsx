@@ -3,10 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { Play, ImageIcon, Sparkles, Download, Eye } from "lucide-react";
+import { Play, Sparkles, Download, Eye } from "lucide-react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { toast } from "sonner";
+import graphicsDesignIcon from "@/assets/graphics-design-icon.png";
 
 // Import video thumbnails
 import videoThumbAcefx from "@/assets/video-thumbnail-acefx.png";
@@ -123,7 +124,7 @@ export const Portfolio = () => {
               Videos
             </TabsTrigger>
             <TabsTrigger value="graphics" className="text-base">
-              <ImageIcon className="mr-2" size={18} />
+              <img src={graphicsDesignIcon} alt="Graphics" className="mr-2 w-[18px] h-[18px] object-contain" />
               Graphics
             </TabsTrigger>
             <TabsTrigger value="effects" className="text-base">
