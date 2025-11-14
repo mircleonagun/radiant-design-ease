@@ -44,6 +44,11 @@ import acefxMay from "@/assets/portfolio/acefx_happy_new_month_may.png";
 import acefxTraders from "@/assets/portfolio/acefx_best_traders.png";
 import acefxCharts from "@/assets/portfolio/acefx_charts_fundamentals.jpg";
 
+// Import Chale and NASENI graphics
+import chaleLetsGo from "@/assets/portfolio/chale_lets_go_new.png";
+import naseni04Days from "@/assets/portfolio/naseni_04_days.jpg";
+import naseni02Days from "@/assets/portfolio/naseni_02_days.jpg";
+
 const graphicsPortfolio = [
   // Jollof Creative Portfolio
   { title: "100 Talents - Men's Mental Health", description: "Social Awareness Campaign", image: mentalHealthNew, brand: "Jollof Creative" },
@@ -65,6 +70,13 @@ const graphicsPortfolio = [
   { title: "ACEFX Academy - Best Traders", description: "Student Success Campaign", image: acefxTraders, brand: "ACEFX Academy" },
   { title: "ACEFX Academy - Charts & Fundamentals", description: "Trading Education Branding", image: acefxCharts, brand: "ACEFX Academy" },
   { title: "ACEFX Academy - Mindset", description: "Trading Psychology Branding", image: strategyMindset, brand: "ACEFX Academy" },
+  
+  // Chale Event Portfolio
+  { title: "Chale - Let's Go!", description: "Africa Film Fest After Party", image: chaleLetsGo, brand: "Jollof Creative" },
+  
+  // NASENI Innovation Portfolio
+  { title: "NASENI - InnovateNaija 4 Days", description: "Innovation Campaign Countdown", image: naseni04Days, brand: "Jollof Creative" },
+  { title: "NASENI - InnovateNaija 2 Days", description: "Innovation Event Promotion", image: naseni02Days, brand: "Jollof Creative" },
 ];
 
 const socialMediaPortfolio = [
