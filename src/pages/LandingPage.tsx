@@ -217,14 +217,15 @@ const LandingPage = () => {
             </div>
             
             <div className="relative animate-scale-in mt-8 lg:mt-0">
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant animate-float">
                 <img 
                   src={heroBg} 
                   alt="Jollof Creative Team"
                   loading="lazy"
-                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                <div className="absolute inset-0 ring-2 ring-primary/20 rounded-2xl sm:rounded-3xl animate-pulse"></div>
               </div>
               <div className="absolute -bottom-4 -left-4 sm:-bottom-8 sm:-left-8 bg-primary text-primary-foreground rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg">
                 <div className="text-2xl sm:text-4xl font-bold">5+</div>
