@@ -289,24 +289,25 @@ const LandingPage = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-elegant transition-all hover:-translate-y-2 duration-300">
+              <Card key={index} className="hover:shadow-elegant transition-all hover:-translate-y-2 duration-300 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardContent className="p-6">
-                  <div className="mb-4 rounded-xl overflow-hidden">
+                  <div className="mb-4 rounded-xl overflow-hidden relative group">
                     <img 
                       src={service.icon} 
                       alt={service.title}
                       loading="lazy"
-                      className="w-full h-48 object-cover hover:scale-110 transition-transform duration-300"
+                      className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground mb-4">{service.description}</p>
                   <Button 
                     variant="link" 
-                    className="p-0 h-auto"
+                    className="p-0 h-auto group/btn"
                     onClick={() => navigate(service.link)}
                   >
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
               </Card>
