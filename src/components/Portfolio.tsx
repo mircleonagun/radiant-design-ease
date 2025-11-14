@@ -49,6 +49,12 @@ import chaleLetsGo from "@/assets/portfolio/chale_lets_go_new.png";
 import naseni04Days from "@/assets/portfolio/naseni_04_days.jpg";
 import naseni02Days from "@/assets/portfolio/naseni_02_days.jpg";
 
+// Import VerasityLabs and Daper graphics
+import verasityReplies from "@/assets/portfolio/verasity_faster_replies.jpg";
+import verasityMessages from "@/assets/portfolio/verasity_stop_missing.jpg";
+import daperSeptember from "@/assets/portfolio/daper_september_friendship.jpg";
+import daperAugust from "@/assets/portfolio/daper_august.jpg";
+
 const graphicsPortfolio = [
   // Jollof Creative Portfolio
   { title: "100 Talents - Men's Mental Health", description: "Social Awareness Campaign", image: mentalHealthNew, brand: "Jollof Creative" },
@@ -59,7 +65,6 @@ const graphicsPortfolio = [
   { title: "Spartan League", description: "Esports Tournament Design", image: clanWar, brand: "Jollof Creative" },
   { title: "Crush Cocktails", description: "Beverage Marketing", image: crimsonVibe, brand: "Jollof Creative" },
   { title: "Wax Cocktail Bar", description: "Menu & Promotion Design", image: mangoCooler, brand: "Jollof Creative" },
-  { title: "100 Talents Mental Health", description: "Social Awareness Campaign", image: mentalHealth, brand: "Jollof Creative" },
   { title: "Swiftpay Business", description: "Fintech App Marketing", image: swiftpay, brand: "Jollof Creative" },
   
   // ACEFX Academy Portfolio
@@ -77,6 +82,14 @@ const graphicsPortfolio = [
   // NASENI Innovation Portfolio
   { title: "NASENI - InnovateNaija 4 Days", description: "Innovation Campaign Countdown", image: naseni04Days, brand: "Jollof Creative" },
   { title: "NASENI - InnovateNaija 2 Days", description: "Innovation Event Promotion", image: naseni02Days, brand: "Jollof Creative" },
+  
+  // VerasityLabs Portfolio
+  { title: "VerasityLabs - Faster Replies", description: "AI Customer Service Branding", image: verasityReplies, brand: "Jollof Creative" },
+  { title: "VerasityLabs - Stop Missing Messages", description: "Chatbot Marketing Campaign", image: verasityMessages, brand: "Jollof Creative" },
+  
+  // Daper Portfolio
+  { title: "Daper - Welcome September", description: "Friendship Campaign Social Media", image: daperSeptember, brand: "Jollof Creative" },
+  { title: "Daper - August Is Here", description: "Monthly Welcome Campaign", image: daperAugust, brand: "Jollof Creative" },
 ];
 
 const socialMediaPortfolio = [
