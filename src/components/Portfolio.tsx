@@ -7,10 +7,10 @@ import { Play, Sparkles, Download, Eye } from "lucide-react";
 import { toast } from "sonner";
 
 // Import video thumbnails
-import videoThumbAcefx from "@/assets/video-thumbnail-acefx.png";
-import videoThumbPapaJones from "@/assets/video-thumbnail-papa-jones.png";
-import videoThumb3 from "@/assets/video-thumbnail-3.jpg";
-import videoThumb4 from "@/assets/video-thumbnail-4.jpg";
+import videoThumb1 from "@/assets/video-cover-africa-film-fest.png";
+import videoThumb2 from "@/assets/video-cover-papa-jones.png";
+import videoThumb3 from "@/assets/video-cover-fear-traders.png";
+import videoThumb4 from "@/assets/video-cover-crush-cinema.png";
 
 // Import portfolio images
 import guidanceJourney from "@/assets/portfolio/guidance_makes_the_journey_short.png";
@@ -132,8 +132,8 @@ export const Portfolio = () => {
               <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
                 <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
-                    src={videoThumbAcefx} 
-                    alt="AceFX Trading Video"
+                    src={videoThumb1} 
+                    alt="Africa Film Fest Video"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -152,8 +152,8 @@ export const Portfolio = () => {
               <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
                 <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
-                    src={videoThumbPapaJones}
-                    alt="Papa Jones Showroom Video"
+                    src={videoThumb2} 
+                    alt="Papa Jones Video"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -172,8 +172,8 @@ export const Portfolio = () => {
               <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
                 <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
-                    src={videoThumb3}
-                    alt="Creative Video 3"
+                    src={videoThumb3} 
+                    alt="Fear Trading Video"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -192,8 +192,8 @@ export const Portfolio = () => {
               <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
                 <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
-                    src={videoThumb4}
-                    alt="Creative Video 4"
+                    src={videoThumb4} 
+                    alt="Crush Cinema Club Video"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
