@@ -71,7 +71,7 @@ export const Reviews = () => {
 
               {/* Review Text */}
               <p className="text-muted-foreground mb-6 italic leading-relaxed">
-                "{review.review}"
+                {review.review}
               </p>
 
               {/* Author Info */}
