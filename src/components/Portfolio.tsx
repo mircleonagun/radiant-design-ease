@@ -128,9 +128,9 @@ export const Portfolio = () => {
           </TabsList>
 
           <TabsContent value="videos" className="space-y-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
                     src={videoThumbAcefx} 
                     alt="AceFX Trading Video"
@@ -154,9 +154,9 @@ export const Portfolio = () => {
               </Card>
 
               <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
-                    src={videoThumbPapaJones} 
+                    src={videoThumbPapaJones}
                     alt="Papa Jones Showroom Video"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
@@ -178,9 +178,9 @@ export const Portfolio = () => {
               </Card>
 
               <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
-                    src={videoThumb3} 
+                    src={videoThumb3}
                     alt="Creative Video 3"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
@@ -202,9 +202,9 @@ export const Portfolio = () => {
               </Card>
 
               <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-[9/16] overflow-hidden">
                   <img 
-                    src={videoThumb4} 
+                    src={videoThumb4}
                     alt="Creative Video 4"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
