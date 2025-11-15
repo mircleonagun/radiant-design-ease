@@ -69,8 +69,14 @@ import fridayFling from "@/assets/portfolio/friday_fling.png";
 import dontSettleSlowGrowth from "@/assets/portfolio/dont_settle_slow_growth.jpg";
 import dap11 from "@/assets/portfolio/dap_11.jpg";
 import dap9 from "@/assets/portfolio/dap_9.jpg";
+import dap8 from "@/assets/portfolio/dap_8.jpg";
+import afrobeatsVsFusion from "@/assets/portfolio/afrobeats_vs_fusion.png";
+import africanRapLosingEdge from "@/assets/portfolio/african_rap_losing_edge.png";
 
 const graphicsPortfolio = [
+  { title: "Daper - Life Update", description: "Motivational Content - Personal Growth", image: dap8, brand: "Daper" },
+  { title: "Afrobeat vs Fusion", description: "Educational Content - Music Culture", image: afrobeatsVsFusion, brand: "AKOR" },
+  { title: "Who Keeps It Real?", description: "Educational Content - African Rap Evolution", image: africanRapLosingEdge, brand: "AKOR" },
   { title: "Get Lit Carnival 2", description: "Event Promotion - Design Variant", image: getLitCarnival2, brand: "Event Graphics" },
   { title: "Friday Fling", description: "Weekend Event Promotion", image: fridayFling, brand: "Event Graphics" },
   { title: "Don't Settle for Slow Growth", description: "Motivational Business Content", image: dontSettleSlowGrowth, brand: "Business Graphics" },
