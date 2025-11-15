@@ -4,11 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Play, Sparkles, Download, Eye } from "lucide-react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Sphere } from "@react-three/drei";
 import { toast } from "sonner";
-import graphicsDesignIcon from "@/assets/graphics-design-icon.png";
-import videoEditingIcon from "@/assets/video-editing-icon-new.png";
 
 // Import video thumbnails
 import videoThumbAcefx from "@/assets/video-thumbnail-acefx.png";
@@ -56,7 +52,6 @@ import daperSeptember from "@/assets/portfolio/daper_september_friendship.jpg";
 import daperAugust from "@/assets/portfolio/daper_august.jpg";
 
 const graphicsPortfolio = [
-  // Jollof Creative Portfolio
   { title: "100 Talents - Men's Mental Health", description: "Social Awareness Campaign", image: mentalHealthNew, brand: "Jollof Creative" },
   { title: "WAX Cocktail Bar - Pretty & Bouji", description: "Event Promotion Design", image: prettyBouji, brand: "Jollof Creative" },
   { title: "SwiftPay - Christmas Campaign", description: "Holiday Marketing Design", image: swiftpayChristmas, brand: "Jollof Creative" },
@@ -66,59 +61,42 @@ const graphicsPortfolio = [
   { title: "Crush Cocktails", description: "Beverage Marketing", image: crimsonVibe, brand: "Jollof Creative" },
   { title: "Wax Cocktail Bar", description: "Menu & Promotion Design", image: mangoCooler, brand: "Jollof Creative" },
   { title: "Swiftpay Business", description: "Fintech App Marketing", image: swiftpay, brand: "Jollof Creative" },
-  
-  // ACEFX Academy Portfolio
-  { title: "ACEFX Academy - July", description: "Trading Academy Monthly Campaign", image: acefxJuly, brand: "ACEFX Academy" },
-  { title: "ACEFX Academy - June", description: "Welcome Month Campaign", image: acefxJune, brand: "ACEFX Academy" },
-  { title: "ACEFX Academy - May", description: "New Month Motivation", image: acefxMay, brand: "ACEFX Academy" },
-  { title: "ACEFX Academy - Guidance", description: "Educational Trading Mindset", image: guidanceJourney, brand: "ACEFX Academy" },
-  { title: "ACEFX Academy - Best Traders", description: "Student Success Campaign", image: acefxTraders, brand: "ACEFX Academy" },
-  { title: "ACEFX Academy - Charts & Fundamentals", description: "Trading Education Branding", image: acefxCharts, brand: "ACEFX Academy" },
-  { title: "ACEFX Academy - Mindset", description: "Trading Psychology Branding", image: strategyMindset, brand: "ACEFX Academy" },
-  
-  // Chale Event Portfolio
-  { title: "Chale - Let's Go!", description: "Africa Film Fest After Party", image: chaleLetsGo, brand: "Jollof Creative" },
-  
-  // NASENI Innovation Portfolio
-  { title: "NASENI - InnovateNaija 4 Days", description: "Innovation Campaign Countdown", image: naseni04Days, brand: "Jollof Creative" },
-  { title: "NASENI - InnovateNaija 2 Days", description: "Innovation Event Promotion", image: naseni02Days, brand: "Jollof Creative" },
-  
-  // VerasityLabs Portfolio
-  { title: "VerasityLabs - Faster Replies", description: "AI Customer Service Branding", image: verasityReplies, brand: "Jollof Creative" },
-  { title: "VerasityLabs - Stop Missing Messages", description: "Chatbot Marketing Campaign", image: verasityMessages, brand: "Jollof Creative" },
-  
-  // Daper Portfolio
-  { title: "Daper - Welcome September", description: "Friendship Campaign Social Media", image: daperSeptember, brand: "Jollof Creative" },
-  { title: "Daper - August Is Here", description: "Monthly Welcome Campaign", image: daperAugust, brand: "Jollof Creative" },
+  { title: "Guidance Makes The Journey Short", description: "Motivational Design", image: guidanceJourney, brand: "Jollof Creative" },
+  { title: "Mental Health Awareness", description: "Community Initiative", image: mentalHealth, brand: "Jollof Creative" },
+  { title: "Strategy & Mindset", description: "Leadership Content", image: strategyMindset, brand: "Jollof Creative" },
+  { title: "ACEFX - Happy New Month July", description: "Monthly Greeting Design", image: acefxJuly, brand: "ACEFX Academy" },
+  { title: "ACEFX - Happy New Month June", description: "Monthly Greeting Design", image: acefxJune, brand: "ACEFX Academy" },
+  { title: "ACEFX - Happy New Month May", description: "Monthly Greeting Design", image: acefxMay, brand: "ACEFX Academy" },
+  { title: "ACEFX - Best Traders", description: "Trading Achievement Showcase", image: acefxTraders, brand: "ACEFX Academy" },
+  { title: "ACEFX - Charts & Fundamentals", description: "Educational Content Design", image: acefxCharts, brand: "ACEFX Academy" },
+  { title: "Chale Wote - Let's Go", description: "Festival Promotion", image: chaleLetsGo, brand: "Chale Wote Festival" },
+  { title: "NASENI Innovate - 4 Days", description: "Innovation Summit Countdown", image: naseni04Days, brand: "NASENI" },
+  { title: "NASENI Innovate - 2 Days", description: "Innovation Summit Countdown", image: naseni02Days, brand: "NASENI" },
+  { title: "Verasity - Faster Replies", description: "Communication Feature Highlight", image: verasityReplies, brand: "VerasityLabs" },
+  { title: "Verasity - Stop Missing Messages", description: "App Feature Promotion", image: verasityMessages, brand: "VerasityLabs" },
+  { title: "Daper - September Friendship", description: "Monthly Theme Design", image: daperSeptember, brand: "Daper" },
+  { title: "Daper - August Theme", description: "Monthly Design", image: daperAugust, brand: "Daper" },
 ];
 
 const socialMediaPortfolio = [
-  { title: "Social Campaign 1", description: "Engaging Social Media Content", image: img6832 },
-  { title: "Social Campaign 2", description: "Brand Storytelling", image: img6833 },
-  { title: "Social Campaign 3", description: "Community Engagement", image: img7640 },
-  { title: "Social Campaign 4", description: "Content Strategy", image: img7639 },
-  { title: "Social Campaign 5", description: "Digital Marketing", image: img7638 },
+  { title: "Social Media Campaign 1", description: "Engagement-focused content", image: img6832 },
+  { title: "Social Media Campaign 2", description: "Brand awareness content", image: img6833 },
+  { title: "Social Media Campaign 3", description: "Product showcase", image: img7640 },
+  { title: "Social Media Campaign 4", description: "Community engagement", image: img7639 },
+  { title: "Social Media Campaign 5", description: "Seasonal campaign", image: img7638 },
 ];
-
-const FloatingShape = () => {
-  return (
-    <Sphere args={[1, 32, 32]} position={[0, 0, 0]}>
-      <meshStandardMaterial color="#ff6b35" wireframe />
-    </Sphere>
-  );
-};
 
 export const Portfolio = () => {
   const [selectedImage, setSelectedImage] = useState<{ image: string; title: string; description: string } | null>(null);
 
-  const handleDownload = async (imageUrl: string, filename: string) => {
+  const handleDownload = async (imageUrl: string, fileName: string) => {
     try {
       const response = await fetch(imageUrl);
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = filename;
+      link.download = fileName;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -126,184 +104,230 @@ export const Portfolio = () => {
       toast.success("Image downloaded successfully!");
     } catch (error) {
       toast.error("Failed to download image");
+      console.error("Download error:", error);
     }
   };
 
   return (
-    <section id="portfolio" className="py-20 lg:py-32 bg-background relative overflow-hidden">
-      {/* Removed 3D Canvas for performance */}
-      
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            Our <span className="bg-gradient-hero bg-clip-text text-transparent">Portfolio</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our creative work across video, graphics, and special effects
-          </p>
-        </div>
-
+    <section className="py-20 relative overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8">
         <Tabs defaultValue="videos" className="w-full">
-          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3 mb-12">
-            <TabsTrigger value="videos" className="text-base">
-              <img src={videoEditingIcon} alt="Videos" className="mr-2 w-[18px] h-[18px] object-contain" />
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-12">
+            <TabsTrigger value="videos" className="gap-2">
+              <Play className="w-4 h-4" />
               Videos
             </TabsTrigger>
-            <TabsTrigger value="graphics" className="text-base">
-              <img src={graphicsDesignIcon} alt="Graphics" className="mr-2 w-[18px] h-[18px] object-contain" />
+            <TabsTrigger value="graphics" className="gap-2">
+              <Sparkles className="w-4 h-4" />
               Graphics
             </TabsTrigger>
-            <TabsTrigger value="effects" className="text-base">
-              <Sparkles className="mr-2" size={18} />
+            <TabsTrigger value="social" className="gap-2">
+              <Sparkles className="w-4 h-4" />
               Social Media
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="videos" className="animate-fade-in">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { id: 1, title: "Brand Storytelling Video", url: "https://drive.google.com/file/d/17ScgIbotjjOPm-Ow4Uxs9lzpqJfsF2Ua/view?usp=drive_link", thumbnail: videoThumbAcefx },
-                { id: 2, title: "Product Showcase", url: "https://drive.google.com/file/d/1M8zCM12fgmZzEvyW7LGawNh5x9AyG8Po/view?usp=drive_link", thumbnail: videoThumbPapaJones },
-                { id: 3, title: "Social Media Campaign", url: "https://drive.google.com/file/d/1kOdH9FkGGMTUUV4HrdRjHSlWYhwJvRjc/view?usp=drive_link", thumbnail: videoThumb3 },
-                { id: 4, title: "Event Highlights", url: "https://drive.google.com/file/d/1g573IU35TNU1nO0IH2d3mDH54bwxnK6p/view?usp=drive_link", thumbnail: videoThumb4 },
-              ].map((item) => (
-                <Card
-                  key={item.id}
-                  className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-                  onClick={() => window.open(item.url, '_blank')}
-                >
-                  <div className="aspect-video relative overflow-hidden">
-                    <img 
-                      src={item.thumbnail} 
-                      alt={item.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors flex items-center justify-center">
-                      <Play
-                        className="text-white group-hover:scale-110 transition-transform"
-                        size={64}
-                        fill="white"
-                      />
-                    </div>
+          <TabsContent value="videos" className="space-y-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                <div className="relative aspect-video overflow-hidden">
+                  <img 
+                    src={videoThumbAcefx} 
+                    alt="AceFX Trading Video"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button
+                      size="lg"
+                      className="rounded-full"
+                      onClick={() => window.open("https://youtu.be/sX3yQsUDLMw?si=zIE4JscBPB-yZM0P", "_blank")}
+                    >
+                      <Play className="mr-2 h-5 w-5" />
+                      Watch Now
+                    </Button>
                   </div>
-                </Card>
-              ))}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">AceFX Trading Platform</h3>
+                  <p className="text-muted-foreground">Professional trading platform showcase</p>
+                </div>
+              </Card>
+
+              <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                <div className="relative aspect-video overflow-hidden">
+                  <img 
+                    src={videoThumbPapaJones} 
+                    alt="Papa Jones Showroom Video"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button
+                      size="lg"
+                      className="rounded-full"
+                      onClick={() => window.open("https://youtube.com/shorts/XNJWv_qDkxc?si=LD6JxeUl5P2S-9-Q", "_blank")}
+                    >
+                      <Play className="mr-2 h-5 w-5" />
+                      Watch Now
+                    </Button>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">Papa Jones Showroom</h3>
+                  <p className="text-muted-foreground">Automotive showroom tour</p>
+                </div>
+              </Card>
+
+              <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                <div className="relative aspect-video overflow-hidden">
+                  <img 
+                    src={videoThumb3} 
+                    alt="Creative Video 3"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button
+                      size="lg"
+                      className="rounded-full"
+                      onClick={() => window.open("#", "_blank")}
+                    >
+                      <Play className="mr-2 h-5 w-5" />
+                      Watch Now
+                    </Button>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">Creative Project 3</h3>
+                  <p className="text-muted-foreground">Motion graphics showcase</p>
+                </div>
+              </Card>
+
+              <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                <div className="relative aspect-video overflow-hidden">
+                  <img 
+                    src={videoThumb4} 
+                    alt="Creative Video 4"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button
+                      size="lg"
+                      className="rounded-full"
+                      onClick={() => window.open("#", "_blank")}
+                    >
+                      <Play className="mr-2 h-5 w-5" />
+                      Watch Now
+                    </Button>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">Creative Project 4</h3>
+                  <p className="text-muted-foreground">Brand video production</p>
+                </div>
+              </Card>
             </div>
           </TabsContent>
 
-          <TabsContent value="graphics" className="animate-fade-in">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <TabsContent value="graphics" className="space-y-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {graphicsPortfolio.map((item, index) => (
-                <Card
-                  key={index}
-                  className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
-                >
-                  <div className="aspect-square relative overflow-hidden">
+                <Card key={index} className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                  <div className="relative aspect-square overflow-hidden">
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-3">
                       <Button
-                        size="sm"
                         variant="secondary"
-                        onClick={() => setSelectedImage(item)}
-                        className="gap-2"
+                        size="sm"
+                        onClick={() => setSelectedImage({ image: item.image, title: item.title, description: item.description })}
                       >
-                        <Eye size={16} />
+                        <Eye className="mr-2 h-4 w-4" />
                         View
                       </Button>
                       <Button
-                        size="sm"
                         variant="secondary"
-                        onClick={() => handleDownload(item.image, `${item.title.toLowerCase().replace(/\s+/g, '-')}.png`)}
-                        className="gap-2"
+                        size="sm"
+                        onClick={() => handleDownload(item.image, `${item.title}.png`)}
                       >
-                        <Download size={16} />
+                        <Download className="mr-2 h-4 w-4" />
                         Download
                       </Button>
                     </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-xs text-primary font-medium mb-1">{item.brand}</p>
+                    <h3 className="font-semibold mb-1 line-clamp-1">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-1">{item.description}</p>
                   </div>
                 </Card>
               ))}
             </div>
           </TabsContent>
 
-          <TabsContent value="effects" className="animate-fade-in">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <TabsContent value="social" className="space-y-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {socialMediaPortfolio.map((item, index) => (
-                <Card
-                  key={index}
-                  className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
-                >
-                  <div className="aspect-square relative overflow-hidden">
+                <Card key={index} className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                  <div className="relative aspect-square overflow-hidden">
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-3">
                       <Button
-                        size="sm"
                         variant="secondary"
-                        onClick={() => setSelectedImage(item)}
-                        className="gap-2"
+                        size="sm"
+                        onClick={() => setSelectedImage({ image: item.image, title: item.title, description: item.description })}
                       >
-                        <Eye size={16} />
+                        <Eye className="mr-2 h-4 w-4" />
                         View
                       </Button>
                       <Button
-                        size="sm"
                         variant="secondary"
-                        onClick={() => handleDownload(item.image, `${item.title.toLowerCase().replace(/\s+/g, '-')}.png`)}
-                        className="gap-2"
+                        size="sm"
+                        onClick={() => handleDownload(item.image, `${item.title}.png`)}
                       >
-                        <Download size={16} />
+                        <Download className="mr-2 h-4 w-4" />
                         Download
                       </Button>
                     </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold mb-1 line-clamp-1">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-1">{item.description}</p>
                   </div>
                 </Card>
               ))}
             </div>
           </TabsContent>
         </Tabs>
-
-        {/* Image Viewer Dialog */}
-        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-          <DialogContent className="max-w-4xl">
-            <DialogTitle className="sr-only">
-              {selectedImage?.title || "Portfolio Image"}
-            </DialogTitle>
-            {selectedImage && (
-              <div className="space-y-4">
-                <div className="relative">
-                  <img
-                    src={selectedImage.image}
-                    alt={selectedImage.title}
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">{selectedImage.title}</h3>
-                  <p className="text-muted-foreground">{selectedImage.description}</p>
-                </div>
-                <Button
-                  onClick={() => handleDownload(selectedImage.image, `${selectedImage.title.toLowerCase().replace(/\s+/g, '-')}.png`)}
-                  className="w-full gap-2"
-                >
-                  <Download size={18} />
-                  Download Image
-                </Button>
-              </div>
-            )}
-          </DialogContent>
-        </Dialog>
       </div>
+
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl">
+          <DialogTitle>{selectedImage?.title}</DialogTitle>
+          {selectedImage && (
+            <div className="space-y-4">
+              <img 
+                src={selectedImage.image} 
+                alt={selectedImage.title}
+                className="w-full rounded-lg"
+              />
+              <p className="text-muted-foreground">{selectedImage.description}</p>
+              <Button
+                className="w-full"
+                onClick={() => handleDownload(selectedImage.image, `${selectedImage.title}.png`)}
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download Image
+              </Button>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
