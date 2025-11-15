@@ -148,8 +148,7 @@ export const Portfolio = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">AceFX Trading Platform</h3>
-                  <p className="text-muted-foreground">Professional trading platform showcase</p>
+                  <h3 className="text-xl font-semibold">AceFX Trading Platform</h3>
                 </div>
               </Card>
 
@@ -172,8 +171,7 @@ export const Portfolio = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Papa Jones Showroom</h3>
-                  <p className="text-muted-foreground">Automotive showroom tour</p>
+                  <h3 className="text-xl font-semibold">Papa Jones Showroom</h3>
                 </div>
               </Card>
 
@@ -196,8 +194,7 @@ export const Portfolio = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Creative Project 3</h3>
-                  <p className="text-muted-foreground">Motion graphics showcase</p>
+                  <h3 className="text-xl font-semibold">Creative Project 3</h3>
                 </div>
               </Card>
 
@@ -220,8 +217,7 @@ export const Portfolio = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Creative Project 4</h3>
-                  <p className="text-muted-foreground">Brand video production</p>
+                  <h3 className="text-xl font-semibold">Creative Project 4</h3>
                 </div>
               </Card>
             </div>
