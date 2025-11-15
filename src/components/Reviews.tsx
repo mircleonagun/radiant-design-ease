@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import adamZlyere from "@/assets/adam-zlyere.jpg";
+import deejayEm from "@/assets/deejay-em.jpg";
 
 const reviews = [
   {
@@ -12,11 +13,12 @@ const reviews = [
     image: adamZlyere,
   },
   {
-    name: "Michael Chen",
-    role: "Founder",
-    company: "StartUp Ventures",
-    review: "The special effects and motion graphics they created for our product launch were absolutely stunning. Professional, creative, and a pleasure to work with.",
+    name: "Deejay Em",
+    role: "Owner",
+    company: "Wax Cocktail Bar",
+    review: "Working with Jollof Creative feels like having my own in-house creative squad. They get my style, they understand the energy I want my brand to carry, and they always pull up with visuals that hit the mark. From quick promo flyers to full hype videos, they keep everything sharp, clean, and professional. No stress, no back-and-forth — just solid delivery every time. These guys know the entertainment game, and it shows.",
     rating: 5,
+    image: deejayEm,
   },
   {
     name: "Emily Rodriguez",
