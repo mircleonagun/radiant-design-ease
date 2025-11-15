@@ -63,7 +63,19 @@ import verasityMessages from "@/assets/portfolio/verasity_stop_missing.jpg";
 import daperSeptember from "@/assets/portfolio/daper_september_friendship.jpg";
 import daperAugust from "@/assets/portfolio/daper_august.jpg";
 
+// Import additional graphics
+import getLitCarnival2 from "@/assets/portfolio/get_lit_carnival_2.png";
+import fridayFling from "@/assets/portfolio/friday_fling.png";
+import dontSettleSlowGrowth from "@/assets/portfolio/dont_settle_slow_growth.jpg";
+import dap11 from "@/assets/portfolio/dap_11.jpg";
+import dap9 from "@/assets/portfolio/dap_9.jpg";
+
 const graphicsPortfolio = [
+  { title: "Get Lit Carnival 2", description: "Event Promotion - Design Variant", image: getLitCarnival2, brand: "Event Graphics" },
+  { title: "Friday Fling", description: "Weekend Event Promotion", image: fridayFling, brand: "Event Graphics" },
+  { title: "Don't Settle for Slow Growth", description: "Motivational Business Content", image: dontSettleSlowGrowth, brand: "Business Graphics" },
+  { title: "Daper Campaign 11", description: "Brand Campaign Design", image: dap11, brand: "Daper" },
+  { title: "Daper Campaign 9", description: "Brand Campaign Design", image: dap9, brand: "Daper" },
   { title: "Jollof Creative - Brand Revamp", description: "Brand Development Service Promotion", image: jollofRevampBrand, brand: "Jollof Creative" },
   { title: "WAX Cocktail Bar - Jollof Rice Club", description: "Weekly Event - Food, Beats & Good Energy", image: waxJollofRiceClub, brand: "WAX Cocktail Bar" },
   { title: "Jollof Creative - Happy Weekend", description: "Weekend Greeting & Brand Engagement", image: jollofHappyWeekend, brand: "Jollof Creative" },
