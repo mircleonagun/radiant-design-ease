@@ -4,6 +4,7 @@ import socialMediaIcon from "@/assets/social-media-management-icon.png";
 import designPenIcon from "@/assets/graphics-design-icon.png";
 import videoEditingIcon from "@/assets/video-editing-icon.jpg";
 import contentStrategyIcon from "@/assets/content-strategy-icon.png";
+import webDevIcon from "@/assets/web-dev-icon-new.jpg";
 
 const services = [
   {
@@ -72,7 +73,7 @@ const services = [
       "Integration with social media, email, and analytics tools",
       "Maintenance and performance updates"
     ],
-    icon: socialMarketingIcon,
+    icon: webDevIcon,
   },
 ];
 
