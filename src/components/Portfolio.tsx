@@ -64,6 +64,16 @@ import daperSeptember from "@/assets/portfolio/daper_september_friendship.jpg";
 import daperAugust from "@/assets/portfolio/daper_august.jpg";
 
 const graphicsPortfolio = [
+  { title: "Jollof Creative - Brand Revamp", description: "Brand Development Service Promotion", image: jollofRevampBrand, brand: "Jollof Creative" },
+  { title: "WAX Cocktail Bar - Jollof Rice Club", description: "Weekly Event - Food, Beats & Good Energy", image: waxJollofRiceClub, brand: "WAX Cocktail Bar" },
+  { title: "Jollof Creative - Happy Weekend", description: "Weekend Greeting & Brand Engagement", image: jollofHappyWeekend, brand: "Jollof Creative" },
+  { title: "WAX Cocktail Bar - Get Lit Carnival", description: "Event Promotion - Sound by Kwamz Original", image: waxGetLitCarnival, brand: "WAX Cocktail Bar" },
+  { title: "NGONE - Get Lit Carnival", description: "Event Promotion - Alternative Design", image: ngoneGetLitCarnival, brand: "NGONE" },
+  { title: "WAX Cocktail Bar - Boogy Friday", description: "Event Promotion - Afrobeats Amapiano Night", image: waxBoogyFriday, brand: "WAX Cocktail Bar" },
+  { title: "Ladysmith Black Mambazo", description: "Educational Content - South African Harmony", image: ladysmithBlackMambazo, brand: "Jollof Creative" },
+  { title: "WAX Cocktail Bar - Sip & Paint", description: "Event Promotion - Food, Music & Cocktails", image: waxSipPaint, brand: "WAX Cocktail Bar" },
+  { title: "Are We Overlooking Francophone African Music?", description: "Educational Content - Music Culture", image: francophoAfricanMusic, brand: "Jollof Creative" },
+  { title: "Afrofete Nollyween", description: "Event Promotion - Halloween Party", image: nollyweenEvent, brand: "Afrofete" },
   { title: "100 Talents - Men's Mental Health", description: "Social Awareness Campaign", image: mentalHealthNew, brand: "Jollof Creative" },
   { title: "WAX Cocktail Bar - Pretty & Bouji", description: "Event Promotion Design", image: prettyBouji, brand: "Jollof Creative" },
   { title: "SwiftPay - Christmas Campaign", description: "Holiday Marketing Design", image: swiftpayChristmas, brand: "Jollof Creative" },
@@ -91,16 +101,6 @@ const graphicsPortfolio = [
 ];
 
 const socialMediaPortfolio = [
-  { title: "Jollof Creative - Brand Revamp", description: "Brand Development Service Promotion", image: jollofRevampBrand },
-  { title: "WAX Cocktail Bar - Jollof Rice Club", description: "Weekly Event - Food, Beats & Good Energy", image: waxJollofRiceClub },
-  { title: "Jollof Creative - Happy Weekend", description: "Weekend Greeting & Brand Engagement", image: jollofHappyWeekend },
-  { title: "WAX Cocktail Bar - Get Lit Carnival", description: "Event Promotion - Sound by Kwamz Original", image: waxGetLitCarnival },
-  { title: "NGONE - Get Lit Carnival", description: "Event Promotion - Alternative Design", image: ngoneGetLitCarnival },
-  { title: "WAX Cocktail Bar - Boogy Friday", description: "Event Promotion - Afrobeats Amapiano Night", image: waxBoogyFriday },
-  { title: "Ladysmith Black Mambazo", description: "Educational Content - South African Harmony", image: ladysmithBlackMambazo },
-  { title: "WAX Cocktail Bar - Sip & Paint", description: "Event Promotion - Food, Music & Cocktails", image: waxSipPaint },
-  { title: "Are We Overlooking Francophone African Music?", description: "Educational Content - Music Culture", image: francophoAfricanMusic },
-  { title: "Afrofete Nollyween", description: "Event Promotion - Halloween Party", image: nollyweenEvent },
   { title: "Social Media Campaign 1", description: "Engagement-focused content", image: img6832 },
   { title: "Social Media Campaign 2", description: "Brand awareness content", image: img6833 },
   { title: "Social Media Campaign 3", description: "Product showcase", image: img7640 },
