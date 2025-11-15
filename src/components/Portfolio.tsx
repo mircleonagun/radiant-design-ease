@@ -51,6 +51,11 @@ import ladysmithBlackMambazo from "@/assets/portfolio/ladysmith_black_mambazo.pn
 import waxSipPaint from "@/assets/portfolio/wax_sip_paint.png";
 import francophoAfricanMusic from "@/assets/portfolio/francophone_african_music.png";
 import nollyweenEvent from "@/assets/portfolio/nollyween_event.jpg";
+import jollofRevampBrand from "@/assets/portfolio/jollof_revamp_brand.jpg";
+import waxJollofRiceClub from "@/assets/portfolio/wax_jollof_rice_club.png";
+import jollofHappyWeekend from "@/assets/portfolio/jollof_happy_weekend.jpg";
+import waxGetLitCarnival from "@/assets/portfolio/wax_get_lit_carnival.png";
+import ngoneGetLitCarnival from "@/assets/portfolio/ngone_get_lit_carnival.png";
 
 // Import VerasityLabs and Daper graphics
 import verasityReplies from "@/assets/portfolio/verasity_faster_replies.jpg";
@@ -86,6 +91,11 @@ const graphicsPortfolio = [
 ];
 
 const socialMediaPortfolio = [
+  { title: "Jollof Creative - Brand Revamp", description: "Brand Development Service Promotion", image: jollofRevampBrand },
+  { title: "WAX Cocktail Bar - Jollof Rice Club", description: "Weekly Event - Food, Beats & Good Energy", image: waxJollofRiceClub },
+  { title: "Jollof Creative - Happy Weekend", description: "Weekend Greeting & Brand Engagement", image: jollofHappyWeekend },
+  { title: "WAX Cocktail Bar - Get Lit Carnival", description: "Event Promotion - Sound by Kwamz Original", image: waxGetLitCarnival },
+  { title: "NGONE - Get Lit Carnival", description: "Event Promotion - Alternative Design", image: ngoneGetLitCarnival },
   { title: "WAX Cocktail Bar - Boogy Friday", description: "Event Promotion - Afrobeats Amapiano Night", image: waxBoogyFriday },
   { title: "Ladysmith Black Mambazo", description: "Educational Content - South African Harmony", image: ladysmithBlackMambazo },
   { title: "WAX Cocktail Bar - Sip & Paint", description: "Event Promotion - Food, Music & Cocktails", image: waxSipPaint },
