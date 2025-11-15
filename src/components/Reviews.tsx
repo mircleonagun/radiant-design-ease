@@ -30,13 +30,6 @@ const reviews = [
     image: hannatu,
   },
   {
-    name: "Emily Rodriguez",
-    role: "Content Creator",
-    company: "Creative Studios",
-    review: "Working with Jollof Creative has been amazing! They understand our vision and bring it to life with their incredible design and editing expertise.",
-    rating: 5,
-  },
-  {
     name: "David Thompson",
     role: "Brand Manager",
     company: "Global Brands Co.",
