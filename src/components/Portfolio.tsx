@@ -240,11 +240,6 @@ export const Portfolio = () => {
                       </Button>
                     </div>
                   </div>
-                  <div className="p-4">
-                    <p className="text-xs text-primary font-medium mb-1">{item.brand}</p>
-                    <h3 className="font-semibold mb-1 line-clamp-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground line-clamp-1">{item.description}</p>
-                  </div>
                 </Card>
               ))}
             </div>
