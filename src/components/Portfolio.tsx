@@ -45,6 +45,13 @@ import chaleLetsGo from "@/assets/portfolio/chale_lets_go_new.png";
 import naseni04Days from "@/assets/portfolio/naseni_04_days.jpg";
 import naseni02Days from "@/assets/portfolio/naseni_02_days.jpg";
 
+// Import new social media graphics
+import waxBoogyFriday from "@/assets/portfolio/wax_boogy_friday.png";
+import ladysmithBlackMambazo from "@/assets/portfolio/ladysmith_black_mambazo.png";
+import waxSipPaint from "@/assets/portfolio/wax_sip_paint.png";
+import francophoAfricanMusic from "@/assets/portfolio/francophone_african_music.png";
+import nollyweenEvent from "@/assets/portfolio/nollyween_event.jpg";
+
 // Import VerasityLabs and Daper graphics
 import verasityReplies from "@/assets/portfolio/verasity_faster_replies.jpg";
 import verasityMessages from "@/assets/portfolio/verasity_stop_missing.jpg";
@@ -79,6 +86,11 @@ const graphicsPortfolio = [
 ];
 
 const socialMediaPortfolio = [
+  { title: "WAX Cocktail Bar - Boogy Friday", description: "Event Promotion - Afrobeats Amapiano Night", image: waxBoogyFriday },
+  { title: "Ladysmith Black Mambazo", description: "Educational Content - South African Harmony", image: ladysmithBlackMambazo },
+  { title: "WAX Cocktail Bar - Sip & Paint", description: "Event Promotion - Food, Music & Cocktails", image: waxSipPaint },
+  { title: "Are We Overlooking Francophone African Music?", description: "Educational Content - Music Culture", image: francophoAfricanMusic },
+  { title: "Afrofete Nollyween", description: "Event Promotion - Halloween Party", image: nollyweenEvent },
   { title: "Social Media Campaign 1", description: "Engagement-focused content", image: img6832 },
   { title: "Social Media Campaign 2", description: "Brand awareness content", image: img6833 },
   { title: "Social Media Campaign 3", description: "Product showcase", image: img7640 },
