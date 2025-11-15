@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Reviews } from "@/components/Reviews";
 import { Video, Sparkles, ImageIcon, MessageSquare, Star, ArrowRight, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 // New portfolio images
 import naseniInnovate2Days from "@/assets/portfolio/naseni_innovate_2days.jpg";
@@ -132,27 +133,6 @@ const LandingPage = () => {
     { title: "Fintech Account Creation", category: "Graphic Design", image: swiftpayCreateAccountNew },
     { title: "Innovation Initiative", category: "Event Marketing", image: naseniInnovate2Days },
     { title: "Social Platform Launch", category: "Social Media", image: daperAugust }
-  ];
-
-  const testimonials = [
-    { 
-      name: "Sarah Johnson", 
-      role: "Marketing Director", 
-      quote: "Jollof Creative transformed our social media presence with stunning visuals and engaging content. Highly recommended!",
-      rating: 5
-    },
-    { 
-      name: "Michael Chen", 
-      role: "Business Owner", 
-      quote: "The video editing quality is exceptional. They understand our brand and deliver exactly what we need, every time.",
-      rating: 5
-    },
-    { 
-      name: "Aisha Mohammed", 
-      role: "Content Creator", 
-      quote: "Working with Jollof Creative has been a game-changer. Their creativity and professionalism are unmatched.",
-      rating: 5
-    }
   ];
 
   const features = [
@@ -468,55 +448,8 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">User Reviews</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Don't Believe Me?<br />Check What Clients Think Of Us
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Our happy customers
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-elegant transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <span className="text-2xl font-bold text-primary">
-                        {testimonial.name.charAt(0)}
-                      </span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-lg">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">"{testimonial.quote}"</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button 
-              size="lg"
-              onClick={() => navigate("/reviews")}
-            >
-              View All Reviews
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Reviews Section */}
+      <Reviews />
 
       {/* Contact CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary via-primary/90 to-primary text-primary-foreground relative overflow-hidden">
