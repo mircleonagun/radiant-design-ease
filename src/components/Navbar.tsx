@@ -28,6 +28,14 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <button
+              onClick={() => handleNavigation("/")}
+              className={`transition-colors font-medium ${
+                isActive("/") ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
+            >
+              Home
+            </button>
+            <button
               onClick={() => handleNavigation("/about")}
               className={`transition-colors font-medium ${
                 isActive("/about") ? "text-primary" : "text-foreground hover:text-primary"
@@ -82,6 +90,14 @@ export const Navbar = () => {
         {isOpen && (
           <div className="md:hidden pb-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
+              <button
+                onClick={() => handleNavigation("/")}
+                className={`transition-colors font-medium text-left ${
+                  isActive("/") ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
+              >
+                Home
+              </button>
               <button
                 onClick={() => handleNavigation("/about")}
                 className={`transition-colors font-medium text-left ${
