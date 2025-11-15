@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -43,7 +44,7 @@ export const Contact = () => {
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate newsletter email
@@ -54,9 +55,19 @@ export const Contact = () => {
       return;
     }
 
-    // In a real app, you would send this to a newsletter service
-    toast.success("Successfully subscribed to newsletter!");
-    setNewsletterEmail("");
+    try {
+      const { error } = await supabase.functions.invoke('newsletter-signup', {
+        body: { email: newsletterEmail }
+      });
+
+      if (error) throw error;
+
+      toast.success("Successfully subscribed to newsletter!");
+      setNewsletterEmail("");
+    } catch (error: any) {
+      console.error('Newsletter signup error:', error);
+      toast.error("Failed to subscribe. Please try again.");
+    }
   };
 
   const handleChange = (
