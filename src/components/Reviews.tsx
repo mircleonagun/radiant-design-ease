@@ -1,13 +1,15 @@
 import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import adamZlyere from "@/assets/adam-zlyere.jpg";
 
 const reviews = [
   {
-    name: "Sarah Johnson",
-    role: "Marketing Director",
-    company: "Tech Innovations Inc.",
-    review: "Jollof Creative transformed our social media presence completely. Their video editing skills are exceptional, and they always deliver on time. Highly recommend!",
+    name: "Adam Zlyere",
+    role: "Founder",
+    company: "Crush Bar",
+    review: "Working with Jollof Creative has been one of the best decisions I've made for my brand. The team understands my vision, brings fresh creative ideas, and delivers consistently high-quality content every single time. Their attention to detail, fast turnaround, and ability to translate concepts into powerful visuals is unmatched. Jollof Creative doesn't just execute — they elevate your brand. I highly recommend them to anyone who wants professional, reliable, and truly exceptional creative work.",
     rating: 5,
+    image: adamZlyere,
   },
   {
     name: "Michael Chen",
@@ -70,9 +72,17 @@ export const Reviews = () => {
 
               {/* Author Info */}
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-hero flex items-center justify-center text-primary-foreground font-bold text-lg">
-                  {review.name.charAt(0)}
-                </div>
+                {review.image ? (
+                  <img 
+                    src={review.image} 
+                    alt={review.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="w-12 h-12 rounded-full bg-gradient-hero flex items-center justify-center text-primary-foreground font-bold text-lg">
+                    {review.name.charAt(0)}
+                  </div>
+                )}
                 <div>
                   <div className="font-semibold text-foreground">{review.name}</div>
                   <div className="text-sm text-muted-foreground">
